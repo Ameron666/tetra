@@ -1,0 +1,550 @@
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: var(--color-background);
+  overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+  height: calc(100vh - 75px);
+}
+
+select {
+  height: 30px;
+  cursor: pointer;
+  outline: none;
+}
+
+.dark-mode-variables {
+  --color-background: #181a1e;
+  --color-white: #202528;
+  --color-dark: #edeffd;
+  --color-dark-variant: #a3bdcc;
+  --color-light: rgba(0, 0, 0, 0.4);
+  --box-shadow: 0 2rem 3rem var(--color-light);
+  --color-text: #ffffff;
+  --user-bg: rgba(255, 255, 255, 0.5);
+}
+
+.headerBlock {
+  display: flex;
+  justify-content: space-between;
+}
+
+header .activeHeader {
+  height: 57px;
+  border: 1px solid var(--color-primary);
+  border-bottom: 1px solid var(--color-white);
+  background-color: var(--color-white);
+  opacity: 1 !important;
+  color: var(--color-primary);
+  font-size: 16px;
+}
+
+header .activeHeaderTR {
+  border-right: 1px solid var(--color-primary);
+}
+
+.headerPart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--color-primary);
+  opacity: 0.5;
+  border-bottom: none;
+  width: 150px;
+  height: 50px;
+  background: var(--color-background);
+  cursor: pointer;
+  position: relative;
+  border-bottom: 1px solid var(--color-primary);
+  font-weight: 500;
+  color: var(--color-info-dark);
+  font-size: 14px;
+}
+
+.headerPart:hover {
+  opacity: 0.8;
+  background-color: var(--color-white);
+}
+
+.triangle {
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  background-color: var(--color-background);
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-right: 1px solid var(--color-primary);
+}
+
+.tabcontent {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding: 10px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-primary);
+  margin-top: -1px;
+  color: var(--color-text);
+  scrollbar-width: none;
+}
+.tabcontent::-webkit-scrollbar {
+  /* webkit */
+  width: 0;
+  height: 0;
+}
+
+.headerBlock_left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 7px;
+  padding: 0;
+  width: 100%;
+  height: 60px;
+}
+
+.headerBlock_right {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.headerBlock_right__user {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--user-bg);
+}
+
+.headerBlock_right__img {
+  width: 25px;
+  cursor: pointer;
+}
+
+.headerBlock_right__img img {
+  width: 100%;
+}
+
+/* ____________________________________ */
+
+.bodyTable {
+  margin: 0;
+  /* padding: 10px; */
+  box-sizing: border-box;
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  /* gap: 6px; */
+  border: 1px solid var(--color-primary); /* maybe temporary border  */
+  margin-bottom: 20px;
+}
+
+.bodyTable:last-child {
+  margin-bottom: 0;
+}
+
+.bodyTable_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 10px;
+}
+
+.bodyTable_title__day {
+  width: 150px;
+}
+
+.bodyTable_title__instrument select {
+  outline: none;
+  border: 1px solid var(--color-primary);
+  padding: 4px;
+  cursor: pointer;
+}
+
+.custom-block {
+  border: 1px solid #000;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-menu {
+  /* display: none; */
+  width: 300px;
+  position: absolute;
+  top: 75px;
+  right: 15px;
+  transform: translate(350px, 0);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  border: 1px solid var(--color-primary);
+  padding: 15px;
+  transition: all 0.5s ease-in-out;
+}
+
+.showBlock {
+  /* border: 1px solid #000; */
+  /* padding: 10px; */
+  width: 300px;
+}
+
+.btn {
+  width: 100%;
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.btn:first-child {
+  margin: 0;
+}
+
+.btn:hover {
+  box-shadow: inset 0 0 5px var(--color-primary);
+}
+
+.tipe {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.tipe input {
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  border: 1px solid var(--color-primary);
+  min-height: 40px;
+}
+
+.tipe__chisl input,
+.tipe__znam input {
+  width: 100%;
+  height: 100%;
+}
+
+.tipe__chisl {
+  width: 100%;
+  height: 40px;
+}
+
+.tipe__znam {
+  width: 100%;
+  height: 40px;
+}
+
+.podgr {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.podgr input,
+.podgr input {
+  width: 100%;
+  height: 100%;
+}
+
+.podgr__podgr1 {
+  width: 100%;
+  height: 40px;
+}
+
+.podgr__podgr2 {
+  width: 100%;
+  height: 40px;
+}
+
+/* ---------------------------- */
+
+.blockText {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.block_ch,
+.block_z {
+  width: 100%;
+}
+
+.block_p1 {
+  border-right: 1px solid var(--color-primary);
+  width: 100%;
+  padding: 10px;
+}
+
+.block_p2 {
+  width: 100%;
+  padding: 10px;
+}
+
+.blockTipeChange {
+  flex-direction: row;
+}
+
+.addPad {
+  padding: 10px;
+}
+
+.addBB {
+  border-bottom: 1px solid var(--color-primary);
+}
+
+/* ___________________ */
+
+.lesTeachBlock {
+  display: none;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+}
+
+.lesTeach {
+  display: flex;
+  /* padding-left: 10px; */
+  width: 300px;
+}
+
+.lesTeach p {
+  width: 300px;
+}
+
+.numb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border: 1px solid var(--color-primary); /* maybe temporary border  */
+}
+
+.numb p {
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lesson {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.lesson:hover {
+  /* box-shadow: 0 0 10px var(--color-primary); */
+  background-color: var(--color-primary-light);
+}
+
+.course {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0 30px 0;
+}
+
+.course_block {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.course button {
+  cursor: pointer;
+}
+
+.courseT {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.courseT input {
+  height: 40px;
+}
+
+.lesson_add {
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+  border: 1px solid var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.lesson_add:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.lesson_del {
+  font-size: 14px;
+  width: auto;
+  padding: 0 5px;
+  height: 40px;
+  cursor: pointer;
+  border: 1px solid var(--color-primary);
+  transition: all 0.3s ease-in-out;
+}
+
+.lesson_del:hover {
+  background-color: var(--color-primary);
+}
+
+/* ________________________________ */
+
+.addStudentSection,
+.addTeacherSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.addStudentBlock,
+.addTeacherBlock,
+.addGroupBlock {
+  width: 500px;
+}
+
+.addStudentBlock,
+.addTeacherBlock {
+  /* position: absolute;
+  top: 75px;
+  left: 15px;
+  transform: translate(-650px, 0); */
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  border: 1px solid var(--color-primary);
+  transition: all 0.5s ease-in-out;
+}
+
+.addPersonButtonForm {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-right: 10px;
+}
+
+.addPersonButtonForm button {
+  /* width: 200px; */
+  height: 35px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 15px;
+}
+
+.addPerson {
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.addPerson:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.addPerson input {
+  outline: none;
+  padding: 0 10px;
+  border: 1px solid var(--color-primary);
+  min-height: 35px;
+}
+.addPersonButton,
+.addTeacherButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid var(--color-primary);
+  width: 300px;
+  height: 40px;
+}
+
+.addPersonButton:hover,
+.addTeacherButton:hover {
+  background-color: var(--color-primary);
+}
+
+/* Отображение  */
+.allPersonsShow {
+  display: flex;
+  flex-direction: column;
+}
+.personShow {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid var(--color-primary);
+  padding: 15px;
+  margin-top: -1px;
+}
+.personShow:hover{
+  background-color: var(--color-primary-light);
+  /* box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.4) inset; */
+}
+.personInfo {
+  display: flex;
+  /* padding: 5px; */
+  /* gap: 10px; */
+  /* border: 1px solid var(--color-primary); */
+}
+.person {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  width: 200px;
+  height: 30px;
+  /* border: 1px solid var(--color-primary); */
+}
+
+.personChange {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--color-primary);
+  height: 30px;
+  width: 150px;
+}
+
+/* Отображение  */
+
+/* Аудитории */
+
+.addAuditionBlock {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  gap: 10px;
+}
+/* Аудитории */
