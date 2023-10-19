@@ -65,6 +65,9 @@ html {
 .button_red {
   background-color: var(--color-red-transparent6);
 }
+.button_tomato{
+  background-color: var(--color-tomato);
+}
 
 .button_grey {
   background-color: var(--color-white-transparent2);
@@ -72,6 +75,11 @@ html {
 
 .button_grey:hover {
   background-color: var(--color-tomato);
+}
+
+.showMore {
+  color: var(--color-red);
+  cursor: pointer;
 }
 
 /* buttons  */
@@ -212,27 +220,25 @@ main {
 
 /* business card */
 
-
 .tetraSection {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 60px 0;
-  
+
   /* background: var(--color-grey); */
 }
 
-.tetra_img{
+.tetra_img {
   width: 1690px;
   height: 400px;
 }
-.tetra_img img{
+.tetra_img img {
   width: 100%;
 }
 
 /* business card */
-
 
 /* information  */
 
@@ -280,9 +286,8 @@ main {
 }
 /* information  */
 
-
 /* hard block  */
-.tetraSectionHard{
+.tetraSectionHard {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -291,17 +296,16 @@ main {
   /* height: 1400px; */
 }
 
-.tetra_hard_img{
+.tetra_hard_img {
   width: var(--width-block);
   height: auto;
 }
 
-.tetra_hard_img img{
-width: 100%;
+.tetra_hard_img img {
+  width: 100%;
 }
 
 /* hard block  */
-
 
 /* teachers  */
 
@@ -382,11 +386,16 @@ width: 100%;
 
 .newsBlock {
   display: flex;
-  gap: 35px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
   padding-top: 40px;
+  width: var(--width-block);
 }
 
 .new {
+  /* width: 33%;
+  max-width: 480px; */
   width: 480px;
   height: 730px;
   border: 1px solid var(--color-white);
@@ -428,6 +437,100 @@ width: 100%;
   width: 440px;
   height: 150px;
 }
+
+.newsSearch {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+  width: var(--width-block);
+}
+.news_search{
+  position: relative;
+}
+.news_input {
+  display: block;
+  width: 1030px;
+  height: 58px;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-white);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 20px;
+}
+.news_input::placeholder {
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 600;
+}
+.news_search_svg{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  top: 0;
+  bottom: 0;
+  right: 20px;
+  width: 22px;
+}
+/* opened news */
+
+.newThisBlock {
+  display: flex;
+  justify-content: center;
+}
+
+.newThis {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  width: var(--width-block);
+  background-color: var(--color-white-transparent1);
+  padding: 52px 170px;
+}
+
+.newThisTitle {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 160%; /* 32px */
+  text-transform: uppercase;
+}
+
+.newThis_images {
+  display: flex;
+  gap: 28px;
+}
+.newThis_img {
+  overflow: hidden;
+  position: relative;
+  width: 375px;
+  height: 267px;
+}
+.newThis_img img {
+  height: 100%;
+  width: auto;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.newContent {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+.newTitle {
+  display: flex;
+  align-items: space-between;
+  justify-content: space-between;
+  width: var(--width-block);
+}
+
+/* opened news */
 
 /* news */
 
