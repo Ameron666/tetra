@@ -342,6 +342,9 @@ footer {
 
 .teachers {
   display: flex;
+  justify-content: space-between;
+  width: var(--width-block);
+
   gap: 40px;
 }
 
@@ -357,17 +360,17 @@ footer {
 .teacher_img {
   overflow: hidden;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cecece;
+
   width: 300px;
   height: 320px;
 }
 
 .teacher_img img {
   height: 100%;
-  width: auto;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .teacherName {
@@ -393,7 +396,7 @@ footer {
 
 /* news */
 .newsSection {
-  padding: 60px 0;
+  padding: 80px 0 140px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -423,17 +426,16 @@ footer {
 .new_img {
   overflow: hidden;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cecece;
   width: 478px;
   height: 360px;
 }
 
 .new_img img {
   height: 100%;
-  width: auto;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .newDate {
@@ -576,17 +578,17 @@ footer {
 .newThis_img {
   overflow: hidden;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cecece;
+
   width: 375px;
   height: 267px;
 }
 
 .newThis_img img {
   height: 100%;
-  width: auto;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .newContent {
@@ -660,7 +662,7 @@ footer {
 .aboutUs {
   display: flex;
   justify-content: space-between;
-  border: 2px solid var(--color-white);
+  border: 1px solid var(--color-white);
   width: var(--width-block);
 }
 
@@ -699,7 +701,9 @@ footer {
 }
 
 .achivements {
+  width: var(--width-block);
   display: flex;
+  justify-content: space-between;
   gap: 40px;
 }
 
@@ -745,8 +749,13 @@ footer {
 .possibleBlock {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 80px;
   width: var(--width-block);
+}
+
+.possibleArrow_img {
+  cursor: pointer;
 }
 
 .possible {
@@ -756,12 +765,18 @@ footer {
 }
 
 .possible_img {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cecece;
   width: 432px;
   height: 325px;
 }
 
 .possible_img img {
-  width: 100%;
+  height: 100%;
 }
 
 .possibleText {
@@ -771,4 +786,90 @@ footer {
   padding: 30px;
 }
 
+.kostyl {
+  height: 140px;
+}
+
 /* about us  */
+
+/* calendar */
+
+.calendarSection {
+  padding: 80px 0 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.calendarBlock {
+  width: var(--width-block);
+  /* height: 820px; */
+}
+.calendarToday {
+  border: 1px solid var(--color-white);
+  width: 560px;
+  height: 820px;
+}
+.today_img {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cecece;
+  width: 560px;
+  height: 380px;
+}
+.today_img img {
+  height: 100%;
+}
+.calendar_img {
+}
+.calendar_img img {
+}
+.calendarTodayList {
+
+}
+.todayBlock {
+  display: flex;
+  justify-content: space-between;
+  /* gap: 60px; */
+  align-items: center;
+  height: 80px;
+  padding: 10px 40px;
+
+}
+.today {
+  width: 385px;
+  
+}
+.todayEvents {
+  height: 355px;
+overflow: hidden;
+}
+
+.todayEvent {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 160%; /* 25.6px */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  border: 1px solid var(--color-background-footer);
+}
+.todayTime {
+  width: 75px;
+}
+.todayContent {
+  width: 385px;
+  height: 80px;
+}
+
+.calendar {
+  background-color: var(--color-background-footer);
+}
+.eventsSection{
+
+}
+/* calendar */

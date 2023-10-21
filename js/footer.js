@@ -7,7 +7,7 @@ footer.append(`
     <div class="footerLeft">
         <div class="mainLogo">
             <a href="/index.html">            
-              <img src="/public/images/logo.svg" alt="" srcset="">
+              <img src="/public/images/icon/logoTetra.png" alt="" srcset="">
             </a>
         </div>
         <div class="footerLeftInfo">
