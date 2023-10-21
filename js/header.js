@@ -13,29 +13,31 @@ document.addEventListener("DOMContentLoaded", function () {
 header.append(`
 
 <section class="headerSection">
-            <div class="mainLogo">
-                <img src="/public/images/logo.svg" alt="" srcset="">
-            </div>
-            <div class="headerLinks">
-                <div class="headerLink">
-                    <a class="link " href="/index.html">Главная</a>
-                </div>
-                <div class="headerLink">
-                    <a class="link " href="/pages/lessons.html">Предметы</a>
-                </div>
-                <div class="headerLink">
-                    <a class="link " href="/pages/news.html">Новости</a>
-                </div>
-                <div class="headerLink">
-                    <a class="link " href="/pages/events.html">Мероприятия</a>
-                </div>
-                <div class="headerLink">
-                    <a class="link " href="/pages/about.html">О нас</a>
-                </div>
-                <div class="headerLink">
-                    <a class="link " href="/pages/creativity.html">Творчество</a>
-                </div>
-            </div>
-        </section>
+    <div class="mainLogo">
+        <a href="/index.html">
+            <img src="/public/images/logo.svg" alt="" srcset="">
+        </a>
+    </div>
+    <div class="headerLinks">
+        <div class="headerLink">
+            <a class="link " href="/index.html">Главная</a>
+        </div>
+        <div class="headerLink">
+            <a class="link " href="/pages/lessons.html">Предметы</a>
+        </div>
+        <div class="headerLink">
+            <a class="link " href="/pages/news.html">Новости</a>
+        </div>
+        <div class="headerLink">
+            <a class="link " href="/pages/events.html">Мероприятия</a>
+        </div>
+        <div class="headerLink">
+            <a class="link " href="/pages/about.html">О нас</a>
+        </div>
+        <div class="headerLink">
+            <a class="link " href="/pages/creativity.html">Творчество</a>
+        </div>
+    </div>
+</section>
 
 `);

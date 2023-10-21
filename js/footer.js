@@ -6,7 +6,9 @@ footer.append(`
 <div class="footerBlock">
     <div class="footerLeft">
         <div class="mainLogo">
-            <img src="/public/images/logo.svg" alt="" srcset="">
+            <a href="/index.html">            
+              <img src="/public/images/logo.svg" alt="" srcset="">
+            </a>
         </div>
         <div class="footerLeftInfo">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio enim ipsum culpa quod. Ex
