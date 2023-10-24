@@ -2,6 +2,9 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   color: var(--color-white);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 160%; /* 32px */
 }
 
 a {
@@ -828,7 +831,6 @@ footer {
 .calendar_img img {
 }
 .calendarTodayList {
-
 }
 .todayBlock {
   display: flex;
@@ -837,15 +839,30 @@ footer {
   align-items: center;
   height: 80px;
   padding: 10px 40px;
-
 }
 .today {
   width: 385px;
-  
 }
 .todayEvents {
   height: 355px;
-overflow: hidden;
+  /* overflow: hidden; */
+  overflow-y: auto;
+}
+
+.todayEvents::-webkit-scrollbar {
+  width: 10px;
+}
+
+.todayEvents::-webkit-scrollbar-track {
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+  background-color: var(--color-background);
+}
+
+.todayEvents::-webkit-scrollbar-thumb {
+  background-color: var(--color-red-transparent6);
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,
+                    color-stop(.5, rgba(255, 255, 255, .25)),
+                    color-stop(.5, transparent), to(transparent)); */
 }
 
 .todayEvent {
@@ -869,7 +886,97 @@ overflow: hidden;
 .calendar {
   background-color: var(--color-background-footer);
 }
-.eventsSection{
 
+.eventsSection {
 }
 /* calendar */
+
+/* This event  */
+
+.thisEventSection {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.thisEventHead {
+  display: flex;
+  gap: 80px;
+  background: var(--color-background-footer);
+}
+
+.thisEventHeadBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: 50px 10px;
+}
+
+.thisEvent_img {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cecece;
+  width: 800px;
+  height: 560px;
+}
+
+.thisEvent_img img {
+  height: 100%;
+}
+
+.thisEventTitle {
+  width: 800px;
+  height: 200px;
+}
+
+.thisEventBlock {
+  display: flex;
+  /* align-items: center; */
+  width: var(--width-block);
+  justify-content: space-between;
+  height: 1000px;
+}
+
+.thisEventGalery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 550px;
+}
+
+.thisEventGalery_imgs {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.thisEventGalery_img {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cecece;
+  width: 500px;
+  height: 320px;
+}
+
+.thisEventGalery_img img {
+  height: 100%;
+}
+
+.thisEventContent {
+  width: 800px;
+}
+
+.arrow_up, .arrow_down{
+cursor: pointer;
+}
+
+/* This event  */
