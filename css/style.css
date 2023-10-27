@@ -61,6 +61,12 @@ div {
   text-transform: uppercase;
 }
 
+.content20 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
 /* text  */
 
 /* buttons  */
@@ -1056,6 +1062,8 @@ footer {
 }
 
 .lessonTitleBlock {
+  /* Не трогать */
+  /* Don't touch */
 }
 
 .lessonTitle {
@@ -1063,17 +1071,18 @@ footer {
 
 .lesson_img {
   overflow: hidden;
-  position: relative;
+  /* position: relative; */
   display: flex;
-  justify-content: center;
+  padding: 20px 0;
+  /* justify-content: center; */
   align-items: center;
-  background-color: var(--color-background);
-  width: 420px;
-  height: 270px;
+  /* background-color: var(--color-background); */
+  /* width: 420px; */
+  /* height: 270px; */
 }
 
 .lesson_img img {
-  height: 100%;
+  /* height: 100%; */
 }
 
 .lessonContent {
@@ -1103,6 +1112,14 @@ footer {
 }
 
 .thisLesson {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  /* width: var(--width-block); */
+}
+.thisLessonTitleBlock {
+  display: flex;
+  justify-content: space-between;
   width: var(--width-block);
 }
 .thisLessonTitle {
@@ -1111,11 +1128,77 @@ footer {
   text-transform: uppercase;
 }
 .thisLessonContent {
-  height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  /* height: 480px; */
 }
 .thisLessonDescription {
+  padding-top: 30px;
   width: 750px;
   height: 420px;
+}
+.thisLesson_img {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  /* background-color: var(--color-grey-light); */
+
+  width: 690px;
+  height: 690px;
+}
+.thisLesson_img img {
+  height: 100%;
+}
+
+.timeTable {
+  display: flex;
+  justify-content: space-between;
+  width: var(--width-block);
+}
+
+.timeTableDays {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-white);
+  padding: 50px 60px;
+  gap: 40px;
+  width: 720px;
+  height: 550px;
+}
+
+.timeTableDay {
+  /* padding-bottom: 20px; */
+}
+
+.timeTableGroups {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: scroll;
+  gap: 40px;
+}
+
+.timeTableGroups::-webkit-scrollbar {
+  width: 10px;
+}
+
+.timeTableGroups::-webkit-scrollbar-track {
+  /* -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset; */
+  background-color: var(--color-transparent);
+}
+
+.timeTableGroups::-webkit-scrollbar-thumb {
+  background-color: var(--color-transparent);
+}
+
+.timeTableGroup {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Lesson  */
@@ -1163,3 +1246,75 @@ footer {
   font-weight: 400;
   line-height: 30px;
 }
+
+/* svg  */
+
+.lesson_svg {
+  position: relative;
+  width: 100%;
+
+  /* пропорционально уменьшает размер. Для адаптива */
+  /*transform: scale(0.8); */
+}
+
+.lesson_svg svg g path {
+  fill: #d9d9d9;
+  transition: all 0.3s ease-in-out;
+}
+.svg_1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.svg_2 {
+  position: absolute;
+  top: 53px;
+  left: 0px;
+}
+.svg_3 {
+  position: absolute;
+  top: 0;
+  left: 112px;
+}
+.svg_4 {
+  position: absolute;
+  top: 0;
+  left: 215px;
+}
+.svg_5 {
+  position: absolute;
+  top: 53px;
+  left: 215px;
+}
+.svg_6 {
+  position: absolute;
+  top: 0;
+  left: 327px;
+}
+
+.lesson:hover .svg_1 svg g path,
+.lesson:hover .svg_5 svg g path {
+  fill: var(--color-green);
+  fill-opacity: 1;
+}
+
+.lesson:hover .svg_2 svg g path,
+.lesson:hover .svg_6 svg g path {
+  fill: var(--color-yellow);
+  fill-opacity: 1;
+}
+
+.lesson:hover .svg_3 svg g path,
+.lesson:hover .svg_7 svg g path {
+  fill: var(--color-red);
+  fill-opacity: 1;
+}
+
+.lesson:hover .svg_4 svg g path,
+.lesson:hover .svg_8 svg g path {
+  fill: var(--color-blue);
+  fill-opacity: 1;
+}
+
+/* svg  */
