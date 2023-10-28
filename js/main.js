@@ -1,6 +1,8 @@
 const selectedItem = document.getElementById("selectedItem");
 const dropdownContent = document.querySelector(".dropdown-content");
 
+$(window).load(function() { $('.preloader').fadeOut('slow'); });
+
 selectedItem.textContent = dropdownContent
   .querySelector("a")
   .getAttribute("data-value");

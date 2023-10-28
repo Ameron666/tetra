@@ -12,28 +12,33 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="/css/lightbox.css">
     <link rel="stylesheet" href="/css/root.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="shortcut icon" href="/public/images/icon/logo.png" type="image/png">
+
 </head>
 
 <body>
-
+    <div class="preloader">
+        <img src="/public/images/default.gif" alt="">
+    </div>
     <header>
 
     </header>
 
 
     <main>
+
         <!-- Визитный блок -->
         <section class="tetraSection">
             <div class="tetra_img">
-              <img src="/public/images/tetra.png" alt="" srcset="">
+                <img src="/public/images/tetra.png" alt="" srcset="">
 
             </div>
         </section>
         <!-- Визитный блок -->
-<div class="kostyl"></div>
+        <div class="kostyl"></div>
         <!-- Информационный блок -->
         <section class="tetraInfoSection">
             <div class="tetraInfoBlock">
@@ -101,10 +106,70 @@
         <!-- Информационный блок -->
 
         <!-- Сложный блок с сылками -->
-        <section class="tetraSectionHard">
-<div class="tetra_hard_img">
-    <img src="/public/images/tetra2.png" alt="">
-</div>
+        <section class="tetraHardSection">
+            <span class="transp">qwe</span>
+            <div class="tetraHardBlock">
+
+                <div class="tetra_hard_svg">
+
+                    <div class="tetra_svg_1" onclick="alert('1')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="964" height="714" viewBox="0 0 964 714"
+                            fill="none">
+                            <path d="M0 714V0H964V234.05H240.249V714H0Z" fill="#4E89AE" />
+                        </svg>
+                    </div>
+                    <div class="tetra_svg_2" onclick="alert('2')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="922" height="439" viewBox="0 0 922 439"
+                            fill="none">
+                            <path d="M0.185913 0.178711V438.466H921.789V234.332H240.343V0.178711H0.185913Z"
+                                fill="#14B1AB" fill-opacity="0.1" />
+                        </svg>
+                    </div>
+                    <div class="tetra_svg_3" onclick="alert('3')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="961" height="469" viewBox="0 0 961 469"
+                            fill="none">
+                            <path
+                                d="M639.5 468.307L0.371338 468.307V272.013L440.5 272.013V0.000183105L961 0.000183105V234.153L639.5 234.153V468.307Z"
+                                fill="#E8505B" fill-opacity="0.1" />
+                        </svg>
+                    </div>
+                    <div class="tetra_svg_4" onclick="alert('4')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="973" height="472" viewBox="0 0 973 472"
+                            fill="none">
+                            <path d="M0.000183105 471.8V0.491364H972.637V237.647H240.157V471.8H0.000183105Z"
+                                fill="#E8505B" fill-opacity="0.1" />
+                        </svg>
+                    </div>
+                    <div class="tetra_svg_5" onclick="alert('5')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="973" height="505" viewBox="0 0 973 505"
+                            fill="none">
+                            <path
+                                d="M531.348 505.002L0.000183105 505.002V234.825L282.185 234.825V0.671906L972.637 0.671906V234.825L531.348 234.825V505.002Z"
+                                fill="#14B1AB" fill-opacity="0.1" />
+                        </svg>
+                    </div>
+                    <div class="tetra_svg_6" onclick="alert('6')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="514" height="988" viewBox="0 0 514 988"
+                            fill="none">
+                            <path
+                                d="M513.998 747.668L513.998 0.178833H234.815V477.491L0.662109 477.491V987.825H234.815V747.668H513.998Z"
+                                fill="#F9D56E" fill-opacity="0.1" />
+                        </svg>
+                    </div>
+                    <div class="tetra_svg_7" onclick="alert('7')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="955" height="472" viewBox="0 0 955 472"
+                            fill="none">
+                            <path d="M954.998 0.695312V472.004H0.373047V234.849H714.841V0.695312H954.998Z"
+                                fill="#4E89AE" fill-opacity="0.1" />
+                        </svg>
+                    </div>
+
+                </div>
+
+
+                <!-- <img src="/public/images/tetra2.png" alt=""> -->
+            </div>
+            <span class="transp">qwe</span>
         </section>
         <!-- Сложный блок с сылками -->
 
@@ -185,7 +250,10 @@
         <!-- Новостной блок -->
         <section class="newsSection">
             <div class="newsTitle title32">Новости</div>
-            <div class="button_red">Смотреть все</div>
+            <!-- <div class="button_red"><a href="/pages/news.html">Смотреть все</a></div> -->
+
+            <button class="custom-btn btn-7"><span><a href="/pages/news.html">Смотреть все</a></span></button>
+
             <div class="newsBlock">
 
                 <div class="new">
@@ -207,6 +275,9 @@
                             </p>
                         </div>
                         <div class="button_grey">Читать дальше</div>
+
+
+
                     </div>
                 </div>
 
@@ -253,7 +324,7 @@
                         <div class="button_grey">Читать дальше</div>
                     </div>
                 </div>
-                
+
             </div>
         </section>
         <!-- Новостной блок -->
@@ -264,17 +335,30 @@
             <div class="photosBlock">
                 <div class="photos">
                     <div class="photos_big_img">
-                        <img src="/public/images/photos/Rectangle 106.png" alt="" srcset="">
-                    </div>
-                    <div class="photosSmall">
 
-                        <div class="photos_small_img">
-                            <img src="/public/images/photos/Rectangle 107.png" alt="" srcset="">
-                        </div>
-                        <div class="photos_small_img">
-                            <img src="/public/images/photos/Rectangle 109.png" alt="" srcset="">
-                        </div>
+
+                        <a href="/public/test/1.png" data-lightbox="cars">
+                            <img src="/public/test/1.png" alt="" srcset="">
+                        </a>
+                        <a href="/public/test/2.png" data-lightbox="cars">
+                            <img src="/public/test/2.png" alt="" srcset="">
+                        </a>
+                        <a href="/public/test/3.png" data-lightbox="cars">
+                            <img src="/public/test/3.png" alt="" srcset="">
+                        </a>
+                        <a href="/public/test/4.png" data-lightbox="cars">
+                            <img src="/public/test/4.png" alt="" srcset="">
+                        </a>
+                        <a href="/public/test/5.png" data-lightbox="cars">
+                            <img src="/public/test/5.png" alt="" srcset="">
+                        </a>
+                        <a href="/public/test/6.png" data-lightbox="cars">
+                            <img src="/public/test/6.png" alt="" srcset="">
+                        </a>
+
+
                     </div>
+
                 </div>
             </div>
         </section>
@@ -283,11 +367,49 @@
     </main>
 
 
+
     <footer>
 
     </footer>
 
+    <!--
+                         <div id="lightboxOverlay" tabindex="-1" class="lightboxOverlay"></div>
+                    <div id="lightbox" tabindex="-1" class="lightbox">
+                        <div class="lb-dataContainer">
+                            <div class="lb-data">
+                                <div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span>
+                                </div>
+                                <div class="lb-closeContainer"><a class="lb-close" role="button" tabindex="0"></a></div>
+                            </div>
+                        </div>
+                        <div class="lb-outerContainer">
+                            <div class="lb-container"><img class="lb-image"
+                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                                    alt="" />
+                                <div class="lb-nav"><a class="lb-prev" role="button" tabindex="0"
+                                        aria-label="Previous image" href=""></a><a class="lb-next" role="button"
+                                        tabindex="0" aria-label="Next image" href=""></a></div>
+                                <div class="lb-loader"><a class="lb-cancel" role="button" tabindex="0"></a></div>
+                            </div>
+                        </div>
+                    </div>
+                     -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="/js/lightbox.js"></script>
+    <script>
+        lightbox.option({
+            'disableScrolling': true,
+            'wrapAround': true,
+            'alwaysShowNavOnTouchDevices': true,
+
+            'fadeDuration': 100,
+            'imageFadeDuration': 100,
+            'resizeDuration': 100,
+            'maxHeight': 800
+
+        });
+    </script>
     <script src="/js/header.js"></script>
     <script src="/js/footer.js"></script>
     <script src="/js/main.js"></script>
