@@ -27,7 +27,7 @@ footer.append(`
                     <img src="/public/images/coolicon1.svg" alt="" srcset="">
                 </div>
 
-                8 (800) 333-77-37
+                <a href="tel:+78003337737">8 (800) 333-77-37</a>
             </div>
             <div class="contact">
                 <div class="contact_img">

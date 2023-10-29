@@ -1,7 +1,37 @@
+$(window).load(function () {
+  $(".preloader").fadeOut("slow");
+});
+
+
+
+
+// _____________________
+// const svg = $(".tetra_svg")
+$(".tetra_svg_div").on("click", (e) => {
+  // console.log(e.target);
+  if (e.target.closest(".tetra_svg")) {
+    // console.log(e.target.closest(".tetra_svg").getAttribute("svg_num"));
+    let lesson = e.target.closest(".tetra_svg").getAttribute("svg_num");
+    // window.location.href = "/pages/" + lesson + ".html";
+    window.location.href = "#";
+  }
+});
+
+
+// _________________________________________
+
+
+// _________________________________________
+
+
+// _________________________________________
+
+
+// _________________________________________
+
+
 const selectedItem = document.getElementById("selectedItem");
 const dropdownContent = document.querySelector(".dropdown-content");
-
-$(window).load(function() { $('.preloader').fadeOut('slow'); });
 
 selectedItem.textContent = dropdownContent
   .querySelector("a")
@@ -18,7 +48,3 @@ dropdownContent.addEventListener("click", function (event) {
     dropdownContent.classList.remove("show");
   }
 });
-
-
-// _____________________
-
