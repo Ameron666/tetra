@@ -130,6 +130,7 @@ function CalendarApp(date) {
     this.addEventListeners();
     this.todayIsSpan.textContent =
       "Сегодня: " + this.months[date.getMonth()] + " " + date.getDate();
+      
   }
   
   CalendarApp.prototype.addEventListeners = function () {
@@ -229,7 +230,6 @@ function CalendarApp(date) {
       }
   
       this.calendarView.appendChild(day);
-      console.log(day);
     }
   
     var _that = this;
@@ -653,5 +653,5 @@ function CalendarApp(date) {
   };
   
   var calendar = new CalendarApp();
-  console.log(calendar);
+
   

@@ -51,7 +51,7 @@ div {
   transition: all 0.3s ease-in-out;
 }
 
-/* text  */
+/* text текст */
 
 .blue {
   color: var(--color-blue);
@@ -99,7 +99,7 @@ div {
 
 /* text  */
 
-/* buttons  */
+/* buttons кнопки */
 .button_red,
 .button_tomato,
 .button_grey {
@@ -143,115 +143,6 @@ div {
   color: var(--color-red);
   cursor: pointer;
 }
-
-/*  */
-
-.custom-btn {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  width: 260px;
-  height: 60px;
-  font-size: 20px;
-  font-weight: 400;
-  cursor: pointer;
-  padding: 10px;
-
-  color: #fff;
-  /* border-radius: 5px; */
-
-  background: var(--color-transparent);
-  transition: all 0.3s ease;
-  position: relative;
-  /* display: inline-block; */
-
-  /* box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), */
-  /* 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1); */
-  outline: none;
-}
-
-/* 7 */
-.btn-7 {
-  /* background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%); */
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0.2) 100%
-  );
-  line-height: 42px;
-  padding: 0;
-  border: none;
-}
-.btn-7 span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  /* display: block; */
-  width: 100%;
-  height: 100%;
-}
-.btn-7:before,
-.btn-7:after {
-  position: absolute;
-  content: "";
-  right: 0;
-  bottom: 0;
-  background: rgba(251, 75, 2, 1);
-  /* box-shadow: -7px -7px 20px 0px rgba(255, 255, 255, 0.9),
-    -4px -4px 5px 0px rgba(255, 255, 255, 0.9),
-    7px 7px 20px 0px rgba(237, 83, 56, 0.6),
-    4px 4px 5px 0px rgba(237, 83, 56, 0.6); */
-  transition: all 0.3s ease;
-}
-.btn-7:before {
-  height: 0%;
-  width: 2px;
-}
-.btn-7:after {
-  width: 0%;
-  height: 2px;
-}
-.btn-7:hover {
-  /* color: rgba(251, 77, 2, 0.884); */
-  background: var(--color-tomato);
-}
-.btn-7:hover:before {
-  height: 100%;
-}
-.btn-7:hover:after {
-  width: 100%;
-}
-.btn-7 span:before,
-.btn-7 span:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 0;
-  background: rgba(237, 83, 56, 0.6);
-  /* box-shadow: -7px -7px 20px 0px rgba(255, 255, 255, 0.9),
-    -4px -4px 5px 0px rgba(255, 255, 255, 0.9),
-    7px 7px 20px 0px rgba(237, 83, 56, 0.5),
-    4px 4px 5px 0px rgba(237, 83, 56, 0.7); */
-  transition: all 0.3s ease;
-}
-.btn-7 span:before {
-  width: 2px;
-  height: 0%;
-}
-.btn-7 span:after {
-  height: 2px;
-  width: 0%;
-}
-.btn-7 span:hover:before {
-  height: 100%;
-}
-.btn-7 span:hover:after {
-  width: 100%;
-}
-
-/*  */
 
 /* buttons  */
 
@@ -387,26 +278,20 @@ footer {
 
 /* footer  */
 
-/* business card */
+/* business card  */
 
 .tetraSection {
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
-  padding: 60px 0;
-
-  /* background: var(--color-grey); */
 }
 
 .tetra_img {
   position: relative;
   width: 80%;
   height: 600px;
-}
-
-.tetra_img img {
-  width: 100%;
+  padding: 60px 0px;
 }
 
 /* business card */
@@ -432,9 +317,9 @@ footer {
 .tetraInfo {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  /* justify-content: space-between; */ 
   align-items: center;
-  gap: 25px;
+  gap: 30px;
   width: 100%;
   text-align: center;
 }
@@ -483,6 +368,7 @@ footer {
   color: var(--color-transparent);
   background: var(--color-transparent);
 }
+
 /* teachers  */
 
 .teachersSection {
@@ -600,6 +486,7 @@ footer {
 .new_img img {
   height: 100%;
 }
+
 .newDesk {
   display: flex;
   flex-direction: column;
@@ -608,6 +495,7 @@ footer {
   gap: 20px;
   /* height: 50%; */
 }
+
 .newDate {
   color: var(--color-red);
   text-align: center;
@@ -774,6 +662,10 @@ footer {
   height: 267px;
 }
 
+.newThis_img a {
+  display: flex;
+}
+
 .newThis_img img {
   height: 100%;
 }
@@ -846,6 +738,7 @@ footer {
   width: 360px;
   height: 250px;
 }
+
 .photos_big_img a img {
   height: 100%;
 }
@@ -855,6 +748,7 @@ footer {
 
 .photos_small_img {
 }
+
 .photos_small_img img {
 }
 
@@ -1076,6 +970,7 @@ footer {
 
 .today {
   width: 385px;
+  cursor: pointer;
 }
 
 .todayEvents {
@@ -1313,16 +1208,19 @@ footer {
   gap: 100px;
   /* width: var(--width-block); */
 }
+
 .thisLessonTitleBlock {
   display: flex;
   justify-content: space-between;
   width: var(--width-block);
 }
+
 .thisLessonTitle {
   font-size: 32px;
   font-weight: 500;
   text-transform: uppercase;
 }
+
 .thisLessonContent {
   display: flex;
   flex-direction: column;
@@ -1330,11 +1228,13 @@ footer {
   gap: 20px;
   /* height: 480px; */
 }
+
 .thisLessonDescription {
   padding-top: 30px;
   width: 750px;
   height: 420px;
 }
+
 .thisLesson_img {
   overflow: hidden;
   position: relative;
@@ -1347,6 +1247,7 @@ footer {
   width: 690px;
   height: 690px;
 }
+
 .thisLesson_img img {
   height: 100%;
 }
@@ -1421,10 +1322,12 @@ footer {
   width: 560px;
   height: 740px;
 }
+
 .creativity_img img {
   height: 100%;
   /* width: 100%; */
 }
+
 .creativityText {
   display: flex;
   flex-direction: column;
@@ -1493,36 +1396,43 @@ footer {
   left: 130px;
   animation: myAnim 2.1s ease 0s 1 normal forwards;
 }
+
 .visit_svg_3 {
   top: 224px;
   left: 400px;
   animation: myAnim 2.2s ease 0s 1 normal forwards;
 }
+
 .visit_svg_4 {
   top: 142px;
   left: 1060px;
   animation: myAnim 2.3s ease 0s 1 normal forwards;
 }
+
 .visit_svg_5 {
   top: 143px;
   left: 1190px;
   animation: myAnim 2.4s ease 0s 1 normal forwards;
 }
+
 .visit_svg_6 {
   top: 136px;
   left: 1470px;
   animation: myAnim 2.5s ease 0s 1 normal forwards;
 }
+
 .visit_svg_7 {
   top: 10px;
   left: 1px;
   animation: myAnim 2.6s ease 0s 1 normal forwards;
 }
+
 .visit_svg_8 {
   top: 10px;
   left: 400px;
   animation: myAnim 2.7s ease 0s 1 normal forwards;
 }
+
 .visit_svg_9 {
   top: 10px;
   left: 1060px;
@@ -1534,31 +1444,37 @@ footer {
   left: 1470px;
   animation: myAnim 2.9s ease 0s 1 normal forwards;
 }
+
 .visit_svg_11 {
   top: 10px;
   left: 1609px;
   animation: myAnim 3s ease 0s 1 normal forwards;
 }
+
 .visit_svg_12 {
   top: 350px;
   left: 850px;
   animation: myAnim 3.1s ease 0s 1 normal forwards;
 }
+
 .visit_svg_13 {
   top: 190px;
   left: 680px;
   animation: myAnim 3.2s ease 0s 1 normal forwards;
 }
+
 .visit_svg_14 {
   top: 190px;
   left: 850px;
   animation: myAnim 3.3s ease 0s 1 normal forwards;
 }
+
 .visit_svg_15 {
   top: 20px;
   left: 530px;
   animation: myAnim 3.4s ease 0s 1 normal forwards;
 }
+
 .visit_svg_16 {
   top: 20px;
   left: 680px;
@@ -1612,6 +1528,7 @@ footer {
 .tetra_span_7 {
   position: absolute;
 }
+
 .tetra_svg_1 svg,
 .tetra_svg_2 svg,
 .tetra_svg_3 svg,
@@ -1626,9 +1543,12 @@ footer {
   /* width: 300px; */
   /* height: 300px; */
 }
+
 .tetra_span {
   font-size: 48px;
-  color: var(--color-background);
+  /* color: var(--color-background); */
+  opacity: 0.1;
+  transition: all 0.3s ease-in-out;
   text-transform: uppercase;
 
   text-shadow: -0 -2px 1px var(--color-white), 0 -2px 1px var(--color-white),
@@ -1645,39 +1565,56 @@ footer {
     -2px 2px 1px var(--color-white), 2px 2px 1px var(--color-white);
 }
 
+.tetra_svg_div:hover .tetra_span {
+  opacity: 1;
+}
+
 .tetra_small {
   font-size: 28px;
-  color: var(--color-background);
+  color: #e8505b;
   text-transform: uppercase;
 }
 
 .tetra_span_1 {
   top: 55px;
   left: 96px;
+  color: #4e89ae;
 }
+
 .tetra_span_2 {
   top: 322px;
   left: 42px;
+  color: #14b1ab;
 }
+
 .tetra_span_3 {
   top: 300px;
   left: 42px;
+  color: #e8505b;
 }
+
 .tetra_span_4 {
   top: 42px;
   left: 42px;
+  color: #e8505b;
 }
+
 .tetra_span_5 {
   top: 42px;
   left: 330px;
+  color: #14b1ab;
 }
+
 .tetra_span_6 {
   top: 514px;
   left: 42px;
+  color: #f9d56e;
 }
+
 .tetra_span_7 {
   top: 270px;
   left: 42px;
+  color: #4e89ae;
 }
 
 .svg_img_1 {
@@ -1686,36 +1623,42 @@ footer {
   top: -66px;
   left: 540px;
 }
+
 .svg_img_2 {
   width: 350px;
   height: 300px;
   top: 1px;
   left: 1px;
 }
+
 .svg_img_3 {
   width: 320px;
   height: 300px;
   top: -67px;
   left: 474px;
 }
+
 .svg_img_4 {
   width: 460px;
   height: 260px;
   top: -21px;
   left: 420px;
 }
+
 .svg_img_5 {
   width: 470px;
   height: 310px;
   top: 205px;
   left: 62px;
 }
+
 .svg_img_6 {
   width: 350px;
   height: 400px;
   top: 42px;
   left: 234px;
 }
+
 .svg_img_7 {
   width: 490px;
   height: 290px;
@@ -1729,26 +1672,32 @@ footer {
   top: 0;
   left: 0;
 }
+
 .tetra_svg_2 {
   top: 276px;
   left: 280px;
 }
+
 .tetra_svg_3 {
   top: 0;
   left: 561px;
 }
+
 .tetra_svg_4 {
   top: 747px;
   left: 0;
 }
+
 .tetra_svg_5 {
   top: 1021px;
   left: 0;
 }
+
 .tetra_svg_6 {
   top: 269px;
   left: 1006px;
 }
+
 .tetra_svg_7 {
   top: 1054px;
   left: 565px;
@@ -1770,6 +1719,7 @@ footer {
   fill: #d9d9d9;
   transition: all 0.3s ease-in-out;
 }
+
 .svg_1 {
   position: absolute;
   top: 0;
@@ -1781,21 +1731,25 @@ footer {
   top: 53px;
   left: 0px;
 }
+
 .svg_3 {
   position: absolute;
   top: 0;
   left: 112px;
 }
+
 .svg_4 {
   position: absolute;
   top: 0;
   left: 215px;
 }
+
 .svg_5 {
   position: absolute;
   top: 53px;
   left: 215px;
 }
+
 .svg_6 {
   position: absolute;
   top: 0;

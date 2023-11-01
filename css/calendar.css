@@ -389,7 +389,7 @@ input.add-event-edit:-ms-input-placeholder {
 }
 .cview--date.today::before {
   animation: popIn 200ms 1 forwards;
-  background: var( --color-red-transparent6);
+  background: var(--color-red-transparent6);
   transform: scale(0);
 }
 @keyframes popIn {
