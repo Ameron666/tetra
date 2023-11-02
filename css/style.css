@@ -283,15 +283,20 @@ footer {
 .tetraSection {
   width: 100%;
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
+  height: 515px;
+  position: relative;
 }
 
 .tetra_img {
-  position: relative;
-  width: 80%;
-  height: 600px;
-  padding: 60px 0px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  /* min-width: 860px; */
+  width: 1860px;
+  height: 100%;
+  transform: translate(-50%, 0) scale(0.95);
 }
 
 /* business card */
@@ -661,6 +666,24 @@ footer {
   width: 375px;
   height: 267px;
 }
+
+.newThis_video {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: var(--color-grey-light); */
+
+  width: 375px;
+  /* height: 267px; */
+}
+
+.newThis_video video {
+  width: 100%;
+  height: 100%;
+}
+  
 
 .newThis_img a {
   display: flex;
@@ -1072,44 +1095,45 @@ footer {
   /* align-items: center; */
   width: var(--width-block);
   justify-content: space-between;
-  height: 1000px;
+  padding: 50px 0 80px;
+  /* height: 1000px; */
 }
 
 .thisEventGalery {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  width: 550px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 50%;
 }
 
-.thisEventGalery_imgs {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.thisEventGalery_img {
+.thisEventGalery a {
   overflow: hidden;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--color-grey-light);
-  width: 500px;
-  height: 320px;
+  border-radius: 3px;
+  width: 360px;
+  height: 250px;
 }
 
-.thisEventGalery_img img {
+.thisEventGalery a img {
   height: 100%;
+}
+
+.thisEventContentBlock {
+  display: flex;
+  width: 50%;
 }
 
 .thisEventContent {
   font-size: 20px;
   font-weight: 400;
   line-height: 32px;
-  width: 900px;
-  padding-top: 85px;
+  width: 100%;
 }
 
 .arrow_up,
@@ -1458,31 +1482,34 @@ footer {
 }
 
 .visit_svg_13 {
-  top: 190px;
+  top: 172px;
   left: 680px;
   animation: myAnim 3.2s ease 0s 1 normal forwards;
 }
 
 .visit_svg_14 {
-  top: 190px;
+  top: 172px;
   left: 850px;
   animation: myAnim 3.3s ease 0s 1 normal forwards;
 }
+.visit_svg_14 img{
+  transform: scale(0.9);
+}
 
 .visit_svg_15 {
-  top: 20px;
+  top: -2px;
   left: 530px;
   animation: myAnim 3.4s ease 0s 1 normal forwards;
 }
 
 .visit_svg_16 {
-  top: 20px;
+  top: -2px;
   left: 680px;
   animation: myAnim 3.5s ease 0s 1 normal forwards;
 }
 
 .visit_svg_17 {
-  top: 60px;
+  top: 50px;
   left: 850px;
   animation: myAnim 3.6s ease 0s 1 normal forwards;
 }
@@ -1781,3 +1808,61 @@ footer {
 }
 
 /* svg  */
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: var(--width-block);
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.prev {
+  left: -140px;
+}
+.next {
+  right: -140px;
+  border-radius: 3px 0 0 3px;
+}
+
+
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*  */
