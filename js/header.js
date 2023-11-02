@@ -18,6 +18,26 @@ header.append(`
             <img src="/public/images/icon/logoTetra.png" alt="" srcset="">
         </a>
     </div>
+
+    <nav class="burger">
+
+        <div class="hamburger-menu">
+            <div class="hamburger"></div>
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a class="link " href="/index.html">Главная</a></li>
+            <li><a class="link " href="/pages/lessons.html">Предметы</a></li>
+            <li><a class="link " href="/pages/news.html">Новости</a></li>
+            <li><a class="link " href="/pages/events.html">Мероприятия</a></li>
+            <li><a class="link " href="/pages/about.html">О нас</a></li>
+            <li><a class="link " href="/pages/creativity.html">Творчество</a></li>
+            
+        </ul>
+    
+    </nav>
+
     <div class="headerLinks">
         <div class="headerLink">
             <a class="link " href="/index.html">Главная</a>

@@ -44,7 +44,9 @@ if (document.querySelector(".dropdown-content")) {
 
 
 // _________________________________________
-
+document.querySelector(".hamburger-menu").addEventListener("click", () => {
+  document.querySelector(".nav-links").classList.toggle("show-menu");
+});
 // _________________________________________
 
 // _________________________________________

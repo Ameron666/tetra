@@ -30,10 +30,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-image: url("/public/images/default.gif");
-  background-repeat: no-repeat; */
   background-color: var(--color-background);
-  /* background-position: center; */
 }
 
 .preloader img {
@@ -41,9 +38,6 @@ html {
 }
 
 main {
-  /* display: flex;
- flex-direction: column;
- gap: 40px; */
   height: 100%;
 }
 
@@ -92,7 +86,6 @@ div {
   font-weight: 600;
   line-height: 32px;
   color: var(--color-background) !important;
-  /* -webkit-text-stroke: 1px gold; */
   text-shadow: 1px 0 1px white, 0 1px 1px white, -1px 0 1px white,
     0 -1px 1px white;
 }
@@ -195,6 +188,10 @@ header {
 
 .headerLink a.active {
   border-bottom: solid 4px var(--color-red);
+}
+
+.burger{
+display: none;
 }
 
 /* header */
@@ -322,23 +319,31 @@ footer {
 .tetraInfo {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */ 
   align-items: center;
   gap: 30px;
   width: 100%;
   text-align: center;
 }
 
-.tetraInfoTitle {
+.tetraInfo_img {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+}
+
+.tetraInfo_img img {
+  height: 100%;
 }
 
 .tetraInfoText {
   color: var(--color-white-transparent7);
-  /* text-align: center; */
   font-size: 16px;
   font-weight: 400;
-  line-height: 140.4%; /* 22.464px */
-  /* width: 350px; */
+  line-height: 140.4%;
 }
 
 /* information  */
@@ -350,9 +355,7 @@ footer {
   justify-content: flex-start;
   align-items: center;
   height: 1700px;
-  /* padding: 100px 0; */
   margin-top: 100px;
-  /* margin-bottom: 1700px; */
 }
 
 .tetraHardBlock {
@@ -384,12 +387,6 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 80px;
-}
-
-.teachersTitle {
-  /* font-size: 32px;
-  font-weight: 500;
-  text-transform: uppercase; */
 }
 
 .teachers {
@@ -575,9 +572,6 @@ footer {
   width: 22px;
 }
 
-.newsSort {
-}
-
 .dropdown {
   width: 266px;
   height: 58px;
@@ -588,8 +582,6 @@ footer {
   position: absolute;
   background-color: var(--color-white-transparent2);
   backdrop-filter: blur(25px);
-  /* min-width: 160px; */
-  /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
   z-index: 1;
 }
 
@@ -618,10 +610,6 @@ footer {
   width: 266px;
   height: 58px;
   border: 1px solid var(--color-white-transparent1);
-}
-
-.dropdown-content a:hover {
-  /* background-color: var(--color-blue); */
 }
 
 /* opened news */
@@ -673,17 +661,13 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: var(--color-grey-light); */
-
   width: 375px;
-  /* height: 267px; */
 }
 
 .newThis_video video {
   width: 100%;
   height: 100%;
 }
-  
 
 .newThis_img a {
   display: flex;
@@ -721,25 +705,10 @@ footer {
   gap: 40px;
 }
 
-.photosTitle {
-}
-
 .photosBlock {
   display: flex;
   width: var(--width-block);
   padding-top: 60px;
-}
-
-.photos {
-}
-
-.photos:before {
-}
-
-.photos::after {
-}
-
-.photosSmall {
 }
 
 .photos_big_img {
@@ -766,31 +735,6 @@ footer {
   height: 100%;
 }
 
-.photos_small_img {
-}
-
-.photos_small_img {
-}
-
-.photos_small_img img {
-}
-
-.lb-container {
-  /* overflow: hidden;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--color-grey-light);
-  width: var(--width-block);
-  height: 750px; */
-}
-
-.lb-container img {
-  /* width: 100% !important;
-  height: 100% !important; */
-}
-
 /* photos */
 
 /* about us  */
@@ -800,7 +744,6 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 60px 0;
-  /* align-items: center; */
 }
 
 .aboutUs {
@@ -815,9 +758,6 @@ footer {
   flex-direction: column;
   padding: 80px;
   gap: 50px;
-}
-
-.aboutTitle {
 }
 
 .aboutContent {
@@ -851,26 +791,18 @@ footer {
   gap: 40px;
 }
 
-.achivementsTitle {
-}
-
 .achivement {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   align-items: center;
   gap: 35px;
   width: 320px;
-  /* height: 350px; */
 }
 
 .achivementNumber {
   text-align: center;
   font-size: 96px;
   font-weight: 700;
-}
-
-.achivementTitle {
 }
 
 .achivementContent {
@@ -883,7 +815,6 @@ footer {
 .possibleSection {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   padding: 80px 0;
   gap: 80px;
   align-items: center;
@@ -949,7 +880,6 @@ footer {
 .calendarBlock {
   display: flex;
   width: var(--width-block);
-  /* height: 820px; */
 }
 
 .calendarToday {
@@ -973,19 +903,9 @@ footer {
   height: 100%;
 }
 
-.calendar_img {
-}
-
-.calendar_img img {
-}
-
-.calendarTodayList {
-}
-
 .todayBlock {
   display: flex;
   justify-content: space-between;
-  /* gap: 60px; */
   align-items: center;
   height: 80px;
   padding: 10px 40px;
@@ -998,7 +918,6 @@ footer {
 
 .todayEvents {
   height: 355px;
-  /* overflow: hidden; */
   overflow-y: auto;
 }
 
@@ -1013,15 +932,12 @@ footer {
 
 .todayEvents::-webkit-scrollbar-thumb {
   background-color: var(--color-red-transparent6);
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,
-                    color-stop(.5, rgba(255, 255, 255, .25)),
-                    color-stop(.5, transparent), to(transparent)); */
 }
 
 .todayEvent {
   font-size: 16px;
   font-weight: 400;
-  line-height: 160%; /* 25.6px */
+  line-height: 160%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1042,9 +958,6 @@ footer {
   background-color: var(--color-background-footer);
 }
 
-.eventsSection {
-}
-
 /* calendar */
 
 /* This event  */
@@ -1053,7 +966,6 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 100px;
-  /* justify-content: center; */
   align-items: center;
 }
 
@@ -1092,11 +1004,9 @@ footer {
 
 .thisEventBlock {
   display: flex;
-  /* align-items: center; */
   width: var(--width-block);
   justify-content: space-between;
   padding: 50px 0 80px;
-  /* height: 1000px; */
 }
 
 .thisEventGalery {
@@ -1157,7 +1067,6 @@ footer {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
-  /* padding-top: 60px; */
   width: var(--width-block);
 }
 
@@ -1181,23 +1090,11 @@ footer {
   /* Don't touch */
 }
 
-.lessonTitle {
-}
-
 .lesson_img {
   overflow: hidden;
-  /* position: relative; */
   display: flex;
   padding: 20px 0;
-  /* justify-content: center; */
   align-items: center;
-  /* background-color: var(--color-background); */
-  /* width: 420px; */
-  /* height: 270px; */
-}
-
-.lesson_img img {
-  /* height: 100%; */
 }
 
 .lessonContent {
@@ -1222,7 +1119,6 @@ footer {
 
 .lessonSection {
   display: flex;
-  /* align-items: center; */
   justify-content: center;
 }
 
@@ -1230,7 +1126,6 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 100px;
-  /* width: var(--width-block); */
 }
 
 .thisLessonTitleBlock {
@@ -1250,7 +1145,6 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   gap: 20px;
-  /* height: 480px; */
 }
 
 .thisLessonDescription {
@@ -1266,8 +1160,6 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 25px;
-  /* background-color: var(--color-grey-light); */
-
   width: 690px;
   height: 690px;
 }
@@ -1292,10 +1184,6 @@ footer {
   height: 550px;
 }
 
-.timeTableDay {
-  /* padding-bottom: 20px; */
-}
-
 .timeTableGroups {
   display: flex;
   flex-direction: column;
@@ -1309,7 +1197,6 @@ footer {
 }
 
 .timeTableGroups::-webkit-scrollbar-track {
-  /* -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset; */
   background-color: var(--color-transparent);
 }
 
@@ -1349,7 +1236,6 @@ footer {
 
 .creativity_img img {
   height: 100%;
-  /* width: 100%; */
 }
 
 .creativityText {
@@ -1492,7 +1378,7 @@ footer {
   left: 850px;
   animation: myAnim 3.3s ease 0s 1 normal forwards;
 }
-.visit_svg_14 img{
+.visit_svg_14 img {
   transform: scale(0.9);
 }
 
@@ -1566,14 +1452,8 @@ footer {
   cursor: pointer;
 }
 
-.tetra_svg_img {
-  /* width: 300px; */
-  /* height: 300px; */
-}
-
 .tetra_span {
   font-size: 48px;
-  /* color: var(--color-background); */
   opacity: 0.1;
   transition: all 0.3s ease-in-out;
   text-transform: uppercase;
@@ -1809,8 +1689,6 @@ footer {
 
 /* svg  */
 
-
-
 /* Slideshow container */
 .slideshow-container {
   max-width: var(--width-block);
@@ -1848,8 +1726,6 @@ footer {
   right: -140px;
   border-radius: 3px 0 0 3px;
 }
-
-
 
 /* Fading animation */
 .fade {

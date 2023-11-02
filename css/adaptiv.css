@@ -1,0 +1,335 @@
+@media (min-width: 320px) and (max-width: 425px) {
+  /*  */
+  :root {
+    --width-block: 100%;
+  }
+
+  .content20 {
+    font-size: 14px;
+  }
+
+  .title24 {
+    font-size: 15px;
+  }
+
+  .title32 {
+    font-size: 20px;
+  }
+
+  .button_red,
+  .button_grey {
+    width: 200px;
+    height: 50px;
+    font-size: 15px;
+  }
+
+  /*  */
+  .headerLinks {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  nav {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: rgba(45, 45, 45, 0.9);
+    z-index: 999;
+    padding: 2px 6px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .hamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 6px;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    /* background-color: white; */
+    margin: 2px;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: none;
+    margin: 0;
+    padding: 10px 10px 15px 10px;
+    gap: 10px;
+  }
+
+  .nav-links li a {
+    color: var(--color-white);
+    /* text-decoration: none; */
+    padding: 1rem;
+  }
+
+  .show-menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+  }
+
+  .headerSection {
+    width: 150px;
+  }
+
+  footer {
+    display: none;
+  }
+
+  /*  */
+
+  .tetraSection {
+    display: none;
+  }
+
+  .tetraHardSection {
+    display: none;
+  }
+
+  .tetraInfoSection {
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tetraInfoBlock {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0 10px;
+    gap: 10px;
+    /* width: 320px; */
+  }
+
+  .tetraInfo {
+    gap: 10px;
+    width: 120px;
+    /* height: 200px; */
+  }
+
+  .tetraInfo_img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .tetraInfoTitle {
+    font-size: 15px;
+  }
+
+  .tetraInfoText {
+    font-size: 13px;
+  }
+
+  .teachersSection {
+    /* margin: 0; */
+    padding: 10px 0;
+  }
+
+  .teachers {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+    width: var(--width-block);
+  }
+
+  .teacher {
+    width: 130px;
+  }
+
+  .teacher_img {
+    width: auto;
+    height: 120px;
+  }
+
+  .teacherName {
+    font-size: 15px;
+  }
+
+  .teacherSpecial {
+    font-size: 14px;
+  }
+
+  .teacherDescription {
+    font-size: 13px;
+  }
+
+  .newsSection {
+    gap: 20px;
+  }
+
+  .newsBlock {
+    justify-content: center;
+  }
+
+  .new {
+    width: 300px;
+  }
+
+  .new_img {
+    width: 298px;
+    height: 240px;
+  }
+
+  .newDescription {
+    width: 280px;
+    font-size: 15px;
+  }
+
+  .newsSearch {
+    align-items: center;
+    /* justify-content: flex-start; */
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .news_input {
+    width: 350px;
+  }
+
+  .photosSection {
+    gap: 10px;
+    padding: 20px 0;
+  }
+
+  .photosBlock {
+    padding: 10px 0;
+  }
+
+  .photos_big_img a {
+    width: 298px;
+    height: 200px;
+  }
+
+  .newThis {
+    gap: 10px;
+    padding: 10px 5px;
+  }
+
+  .newThisTitle {
+    font-size: 15px;
+  }
+
+  .newContent {
+    font-size: 13px;
+  }
+
+  .newThis_images {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 0 5px;
+  }
+
+  .newThis_img {
+    width: 310px;
+    height: 200px;
+  }
+
+  .newThis_video {
+    width: 310px;
+  }
+
+  .dropdown {
+    width: 160px;
+  }
+
+  .dropbtn {
+    width: 160px;
+  }
+
+  .lessonsBlock {
+    align-items: center;
+  }
+
+  .lesson {
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 8px;
+  }
+
+  .lessonSection {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: var(--width-block);
+  }
+
+  .lessonTitleBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lesson_img {
+    transform: scale(0.8);
+  }
+
+  .lesson_svg div {
+    display: none;
+  }
+
+  .lessonContent {
+    align-items: center;
+  }
+
+  .thisLesson {
+    gap: 20px;
+    width: 95%;
+    height: auto;
+  }
+
+  .thisLessonTitleBlock {
+    flex-direction: column;
+  }
+
+  .thisLessonDescription {
+    width: 100%;
+  }
+
+  .thisLesson_img {
+    display: none;
+  }
+
+  .timeTable {
+    flex-direction: column;
+  }
+
+  .timeTableDays {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+  .thisLessonContent {
+    /* width: 90%; */
+  }
+  .timeTableGroup {
+    /* justify-content: space-around; */
+  }
+
+  /* 
+@media (min-width: 768px) and (max-width: 1024px) {
+
+} 
+
+ */
+}
