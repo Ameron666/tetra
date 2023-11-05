@@ -1,0 +1,434 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.downloadBlock{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.downloadBlock img{
+    width: 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+input[type="file"] {
+    outline: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+    width: auto !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+.admin {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.admin_menu {
+    width: var(--menu-width);
+    height: 100%;
+    background-color: var(--item-main);
+    color: var(--white);
+}
+
+.admin_info {
+    width: calc(100% - var(--menu-width));
+    padding: 20px;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.admin_menu__items {
+    width: 100%;
+    height: calc(100% - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.admin_menu__items ul li {
+    width: 100%;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+}
+
+.admin_menu__items ul li:hover {
+    background-color: var(--item-hover);
+}
+
+.admin_menu__items ul li:hover .triangle {
+    background-color: var(--item-hover);
+}
+
+.admin_menu__logo a {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    padding: 0px 20px;
+}
+
+.activeItem {
+    background-color: var(--active-item) !important;
+}
+
+.triangle {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 0;
+    background-color: var(--item-main);
+    width: 10px;
+    height: 20px;
+    -webkit-clip-path: polygon(100% 0, 0 50%, 100% 100%);
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+}
+
+.activeItem .triangle {
+    background-color: var(--white) !important;
+}
+
+.admin_info__item___title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.admin_info__item___form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.admin_info__item___form label {
+    font-size: 16px;
+    margin-top: 10px;
+}
+.admin_info__item___form label:first-child {
+    margin-top: 0px;
+}
+
+.admin_info__item___form input {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--item-main);
+}
+
+.admin_info__item___form textarea {
+    width: 100%;
+    height: 500px;
+}
+
+.admin_info__item___form input:focus {
+    border: 1px solid var(--active-item);
+}
+
+.admin_info__item___form button {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--item-main);
+    cursor: pointer;
+    background-color: var(--item-elements);
+    color: var(--item-main);
+    margin-top: 10px;
+}
+
+.admin_info__item___form button:hover {
+    background-color: var(--active-item);
+    color: var(--white);
+}
+
+
+.admin_info__item___content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.admin_info__item___content____element {
+    background-color: var(--item-hover);
+    width: 49%;
+    height: 100px;
+    padding: 15px;
+    border-radius: 5px;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.admin_info__item___content____element_____title {
+    height: 50%;
+    font-size: 16px;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -ms-line-clamp: 1;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+}
+
+.admin_info__item___content____element_____title img {
+    height: 100%;
+}
+
+.admin_info__item___content____element_____btnHover {
+    display: none;
+    gap: 10px;
+}
+
+.admin_info__item___content____element:hover .admin_info__item___content____element_____btnHover {
+    display: flex;
+}
+
+.admin_info__item___content____element_____btnHover______title {
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.admin_info__item___content____element_____btnHover______title:hover {
+    opacity: 1;
+}
+
+.delete {
+    color: var(--item-delete);
+}
+
+.admin_info__elem {
+    display: none;
+}
+
+.admin_info__changeElem {
+    width: 100%;
+    /* height: 100%; */
+    display: flex;
+    align-items: center;
+}
+
+.admin_info__changeElem___data {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+}
+
+.admin_info__changeElem___data::-webkit-scrollbar {
+    display: none;
+}
+
+.admin_info__changeElem___data____title {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+}
+
+.admin_info__changeElem___data____text {
+    width: 100%;
+    height: 500px;
+    padding: 10px;
+}
+
+.admin_info__changeElem___data____img {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.admin_info__changeElem___data____img img {
+    height: 100px;
+}
+
+.admin_info__changeElem___data____btn {
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+    background-color: var(--white);
+    border: 1px solid var(--item-hover);
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+    font-size: 14px;
+}
+
+.admin_info__changeElem___data____btn:hover{
+    background-color: var(--active-item);
+    border: 1px solid var(--active-item);
+    color: var(--white);
+}
+
+.comeBack {
+    width: 200px;
+    padding: 12px 15px;
+    color: var(--white);
+    background-color: var(--item-hover);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.comeBack img {
+    width: 10px;
+}
+
+.comeBack:hover {
+    background-color: var(--active-item);
+}
+
+.admin_info__changeElem___data____btn {
+    position: fixed;
+    top: 20px;
+    right: 35px;
+}
+
+.admin_info__changeElem___data____header {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.tox-statusbar__branding{
+    display: none !important;
+}
+
+.admin_info__item___tabNames{
+    display: flex;
+    gap: 10px;
+}
+
+.admin_info__item___tabNames____name{
+    border: 1px solid var(--active-item);
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.admin_info__item___tabNames____name:hover{
+    background-color: var(--active-item);
+    color: var(--white);
+}
+
+.activeTabName{
+    background-color: var(--active-item);
+    color: var(--white);
+}
+
+.admin_info__item___tabBlocks____block{
+    display: none;
+}
+
+.activeBlockShow{
+    display: block;
+}
+
+.admin_info__item___tabBlocks____block{
+    margin-top: 20px;
+}
+
+.admin_info__changeElem___data____img__delete{
+    height: 35px;
+    background-color: brown;
+    color: var(--white);
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all .2s ease-in-out;
+}
+
+.admin_info__changeElem___data____img__delete:hover{
+    opacity: 1;
+}
+
+.tags_admin{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tags_admin__block{
+    border: 2px solid var(--active-item);
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--active-item);
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+.tags_admin__block:hover{
+    color: #fff;
+    background-color: var(--active-item);
+}
+
+.active_tags_admin__block{
+    color: #fff;
+    background-color: var(--active-item);
+}
+
+.dn_for_tags{
+    display: none;
+}

@@ -2,6 +2,7 @@
   /*  */
   :root {
     --width-block: 100%;
+    --width-block100: 100%;
   }
 
   .content20 {
@@ -48,7 +49,7 @@
   }
 
   .hamburger-menu {
-    display: block;
+    display: flex;
   }
 
   .hamburger {
@@ -63,27 +64,50 @@
     /* background-color: white; */
     margin: 2px;
   }
+  .hamb_active {
+    transform: rotateX(180deg);
+  }
+
+  .hamburger {
+    width: 30px;
+    height: 30px;
+  }
+  .hamburger img {
+    width: var(--width-block100);
+  }
 
   .nav-links {
     list-style: none;
     display: none;
     margin: 0;
-    padding: 10px 10px 15px 10px;
+    padding: 5px 10px 20px 10px;
     gap: 10px;
   }
 
-  .nav-links li a {
-    color: var(--color-white);
-    /* text-decoration: none; */
-    padding: 1rem;
+  .nav-links li {
+    width: var(--width-block100);
   }
 
+  .nav-links li a {
+    /* text-decoration: none; */
+    padding: 5px 0;
+    /* margin: 5px 0; */
+  }
+  .link {
+    display: flex;
+    /* min-width: 200px; */
+    width: var(--width-block100);
+    color: var(--color-white);
+    border: 1px solid red;
+  }
   .show-menu {
     display: flex;
     flex-direction: column;
   }
 
   header {
+    padding: 0 20px;
+    justify-content: flex-start;
   }
 
   .headerSection {
@@ -92,6 +116,7 @@
 
   footer {
     display: none;
+    /* justify-content: flex-start; */
   }
 
   /*  */
@@ -147,16 +172,21 @@
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 10px;
-    width: var(--width-block);
+    width: var(--width-block100);
   }
-
+  .photosBlock .teacher {
+    width: var(--width-block100);
+  }
+  .photosBlock .teacher .teacher_img {
+    height: 300px;
+  }
   .teacher {
-    width: 130px;
+    width: 150px;
   }
 
   .teacher_img {
     width: auto;
-    height: 120px;
+    height: 180px;
   }
 
   .teacherName {
@@ -193,15 +223,19 @@
     font-size: 15px;
   }
 
+  .news_serach_result{width: var(--width-block100);}
+
   .newsSearch {
     align-items: center;
+    width: var(--width-block100);
     /* justify-content: flex-start; */
     flex-wrap: wrap;
     gap: 20px;
   }
 
   .news_input {
-    width: 350px;
+    width: var(--width-block100);
+    /* width: 400px; */
   }
 
   .photosSection {
@@ -210,6 +244,7 @@
   }
 
   .photosBlock {
+    flex-direction: column;
     padding: 10px 0;
   }
 
@@ -261,7 +296,7 @@
 
   .lesson {
     align-items: center;
-    width: 100%;
+    width: var(--width-block100);
     height: auto;
     padding: 8px;
   }
@@ -270,7 +305,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: var(--width-block);
+    width: var(--width-block100);
   }
 
   .lessonTitleBlock {
@@ -303,7 +338,10 @@
   }
 
   .thisLessonDescription {
-    width: 100%;
+    min-height: 450px;
+    /* height: 450px; */
+    padding: 10px 5px 30px;
+    width: var(--width-block100);
   }
 
   .thisLesson_img {
@@ -315,17 +353,191 @@
   }
 
   .timeTableDays {
-    width: 100%;
+    width: var(--width-block100);
     height: auto;
     padding: 10px;
   }
   .thisLessonContent {
+    gap: 10px;
     /* width: 90%; */
   }
   .timeTableGroup {
     /* justify-content: space-around; */
   }
 
+  .creativity_img {
+    width: var(--width-block100);
+    height: 350px;
+  }
+
+  .creativityText {
+    padding: 10px;
+    /* gap: 20px; */
+    width: var(--width-block100);
+    height: 100%;
+  }
+  .creativityBlock {
+    /* height: 100vh; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+  }
+  .creativityTitle {
+    text-align: center;
+    width: var(--width-block100);
+  }
+  .creativityContent {
+    width: var(--width-block100);
+    height: 600px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  .prev {
+    left: 10px;
+  }
+  .next {
+    right: 10px;
+  }
+  .prev,
+  .next {
+    top: 400px;
+    width: 35px;
+    height: 35px;
+    padding: 2px;
+  }
+  .prev img,
+  .next img {
+    width: var(--width-block100);
+  }
+
+  .aboutUs {
+    flex-direction: column-reverse;
+  }
+
+  .about {
+    padding: 10px;
+  }
+  .about_img {
+    width: var(--width-block100);
+    height: auto;
+  }
+  .achivements {
+    flex-wrap: wrap;
+  }
+
+  .achivement {
+    width: 45%;
+    gap: 10px;
+  }
+  .achivementNumber {
+    font-size: 36px;
+  }
+  .achivementContent {
+    font-size: 14px;
+  }
+
+  .possibleSection {
+    gap: 20px;
+    padding: 40px 0;
+  }
+
+  .possibleBlock {
+    flex-direction: column;
+  }
+
+  .possibleBlock :first-child {
+    /* display: block; */
+  }
+  .possible {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    height: 400px;
+    width: var(--width-block100);
+    /* display: none; */
+  }
+  .possibleText {
+    align-items: center;
+    justify-content: center;
+    padding: 20px 5px 0;
+  }
+  .possibleContent {
+    width: 90%;
+  }
+  .possible_img {
+    margin: 0;
+    width: 350px;
+    height: 240px;
+  }
+
+  .calendarSection {
+    padding: 20px 0 5px;
+    gap: 20px;
+  }
+
+  .calendarBlock {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .calendar {
+    padding: 40px 20px;
+    height: 400px;
+  }
+  .calendarToday {
+    width: var(--width-block100);
+  }
+  .today_img {
+    width: var(--width-block100);
+  }
+  .todayContent {
+    font-size: 13px;
+    line-height: normal;
+  }
+  .todayEvent {
+    font-size: 14px;
+    padding: 10px 10px 0;
+    align-items: flex-start;
+  }
+  .cview__month-current {
+    font-size: 16px;
+  }
+  .cview__month-last,
+  .cview__month-next {
+    font-size: 14px;
+  }
+  .thisEventHead {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .thisEvent_img {
+    width: var(--width-block100);
+    height: 200px;
+  }
+  .thisEventTitle {
+    font-size: 16px;
+    width: var(--width-block100);
+  }
+  .thisEventHeadBlock {
+    gap: 20px;
+    padding: 20px 10px;
+  }
+  .thisEventSection {
+    justify-content: center;
+  }
+  .thisEventBlock {
+    flex-direction: column;
+  }
+  .thisEventGalery{width:var(--width-block100); justify-content: center;}
+  .thisEventGalery a {
+    width: 160px;
+    height: 150px;
+  }
+  .thisEventContentBlock{width: var(--width-block100); padding: 60px 5px 20px;}
+  .thisEventContent{font-size: 15px; line-height: 20px;}
   /* 
 @media (min-width: 768px) and (max-width: 1024px) {
 

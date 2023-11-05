@@ -2,12 +2,15 @@ $(window).load(function () {
   $(".preloader").fadeOut("slow");
 });
 
+// const video = document.getElementById("myVideo");
+// video.play();
+
 // _____________________
 // const svg = $(".tetra_svg")
 $(".tetra_svg_div").on("click", (e) => {
   if (e.target.closest(".tetra_svg")) {
     let lesson = e.target.closest(".tetra_svg").getAttribute("svg_num");
-    window.location.href = "/pages/" + lesson + ".html";
+    window.location.href =  lesson + ".html";
   }
 });
 
@@ -15,7 +18,7 @@ $(".tetra_svg_div").on("mousedown", (e) => {
   if (e.which === 2) { // Проверяем, что нажата средняя кнопка мыши
     if (e.target.closest(".tetra_svg")) {
       let lesson = e.target.closest(".tetra_svg").getAttribute("svg_num");
-      window.open("/pages/" + lesson + ".html", '_blank');
+      window.open( lesson + ".html", '_blank');
     }
   }
 });
@@ -46,6 +49,7 @@ if (document.querySelector(".dropdown-content")) {
 // _________________________________________
 document.querySelector(".hamburger-menu").addEventListener("click", () => {
   document.querySelector(".nav-links").classList.toggle("show-menu");
+  document.querySelector(".hamburger").classList.toggle("hamb_active");
 });
 // _________________________________________
 

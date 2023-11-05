@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/lightbox.css">
+    <link rel="stylesheet" href="/css/root.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/public/images/icon/logo.png" type="image/png">
+
+    <link rel="stylesheet" href="/css/adaptiv.css">
+    
+
+</head>
+
+<body>
+     <div class="preloader">
+        <img src="/public/images/default.gif" alt="">
+    </div>
+    <header></header>
+
+    <main>
+
+        <section class="newsSection">
+            <!-- Поисковой блок  -->
+            <div class="newsSearch">
+
+                <div class="news_serach_result"> 246 результатов </div>
+                <div class="news_search">
+                    <input type="search" name="" id="" class="news_input" placeholder="Поиск">
+                    <span class="news_search_svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
+                            <path
+                                d="M20.2555 22.1435L12.6355 14.5222C9.24573 16.9321 4.57475 16.3426 1.89 13.1661C-0.79475 9.98952 -0.597616 5.28562 2.34351 2.34484C5.28385 -0.597231 9.98821 -0.795218 13.1654 1.88939C16.3425 4.57401 16.9323 9.24544 14.5222 12.6355L22.1422 20.2568L20.2568 22.1422L20.2555 22.1435ZM7.99951 2.66749C5.47111 2.66692 3.28976 4.44174 2.77614 6.91742C2.26252 9.3931 3.55779 11.8892 5.87774 12.8945C8.1977 13.8998 10.9047 13.1379 12.3598 11.0702C13.815 9.00254 13.6183 6.19726 11.8888 4.35284L12.6955 5.15284L11.7862 4.24617L11.7702 4.23017C10.7726 3.22641 9.4147 2.66368 7.99951 2.66749Z"
+                                fill="white" />
+                        </svg>
+                    </span>
+                </div>
+                <!--  -->
+
+                <div class="dropdown">
+                    <button class="dropbtn" id="selectedItem"> </button>
+                    <div class="dropdown-content">
+                        <a href="#" data-value="Сначала новые" selected>Сначала новые</a>
+                        <a href="#" data-value="Сначала старые">Сначала старые</a>
+                        <!-- <a href="#">Элемент 3</a> -->
+                    </div>
+                </div>
+
+                <!--  -->
+
+            </div>
+            <!-- Поисковой блок  -->
+
+            <!-- Новостной блок -->
+            <div class="newsBlock" id="news_all">
+<!-- 
+                <div class="new">
+                    <div class="new_img">
+                        <img src="/public/images/news/new1.png" alt="" srcset="">
+                    </div>
+                    <div class="newDesk">
+
+                        <div class="newDate">
+                            12.10.2023
+                        </div>
+                        <div class="newDescription">
+                            <p class="newDescriptionClip">
+                                ЦМИТ "Тетра" совместно с Министерством молодежи и АНО "Моя карьера" проводят семинар на
+                                тему финансовой грамотности для обучающихся и студентов общеобразовательных учреждений
+                                Lorem,
+                                ipsum dolor sit amet consectetur adipisicing elit. Dolor alias voluptatem rerum
+                                aspernatur est pariatur atque repudiandae eos, optio quam.
+                            </p>
+                        </div>
+                        <a href="/new.html"><div class="button_grey">Читать дальше</div></a>
+                    </div>
+                </div>
+
+                <div class="new">
+                    <div class="new_img">
+                        <img src="/public/images/news/new1.png" alt="" srcset="">
+                    </div>
+                    <div class="newDesk">
+
+                        <div class="newDate">
+                            12.10.2023
+                        </div>
+                        <div class="newDescription">
+                            <p class="newDescriptionClip">
+                                ЦМИТ "Тетра" совместно с Министерством молодежи и АНО "Моя карьера" проводят семинар на
+                                тему финансовой грамотности для обучающихся и студентов общеобразовательных учреждений
+                                Lorem,
+                                ipsum dolor sit amet consectetur adipisicing elit. Dolor alias voluptatem rerum
+                                aspernatur est pariatur atque repudiandae eos, optio quam.
+                            </p>
+                        </div>
+                        <a href="/new.html"><div class="button_grey">Читать дальше</div></a>
+                    </div>
+                </div>
+
+                <div class="new">
+                    <div class="new_img">
+                        <img src="/public/images/news/new1.png" alt="" srcset="">
+                    </div>
+                    <div class="newDesk">
+
+                        <div class="newDate">
+                            12.10.2023
+                        </div>
+                        <div class="newDescription">
+                            <p class="newDescriptionClip">
+                                ЦМИТ "Тетра" совместно с Министерством молодежи и АНО "Моя карьера" проводят семинар на
+                                тему финансовой грамотности для обучающихся и студентов общеобразовательных учреждений
+                                Lorem,
+                                ipsum dolor sit amet consectetur adipisicing elit. Dolor alias voluptatem rerum
+                                aspernatur est pariatur atque repudiandae eos, optio quam.
+                            </p>
+                        </div>
+                        <a href="/new.html"><div class="button_grey">Читать дальше</div></a>
+                    </div>
+                </div>
+
+                <div class="new">
+                    <div class="new_img">
+                        <img src="/public/images/news/new1.png" alt="" srcset="">
+                    </div>
+                    <div class="newDesk">
+
+                        <div class="newDate">
+                            12.10.2023
+                        </div>
+                        <div class="newDescription">
+                            <p class="newDescriptionClip">
+                                ЦМИТ "Тетра" совместно с Министерством молодежи и АНО "Моя карьера" проводят семинар на
+                                тему финансовой грамотности для обучающихся и студентов общеобразовательных учреждений
+                                Lorem,
+                                ipsum dolor sit amet consectetur adipisicing elit. Dolor alias voluptatem rerum
+                                aspernatur est pariatur atque repudiandae eos, optio quam.
+                            </p>
+                        </div>
+                        <a href="/new.html"><div class="button_grey">Читать дальше</div></a>
+                    </div>
+                </div>
+
+                <div class="new">
+                    <div class="new_img">
+                        <img src="/public/images/news/new1.png" alt="" srcset="">
+                    </div>
+                    <div class="newDesk">
+
+                        <div class="newDate">
+                            12.10.2023
+                        </div>
+                        <div class="newDescription">
+                            <p class="newDescriptionClip">
+                                ЦМИТ "Тетра" совместно с Министерством молодежи и АНО "Моя карьера" проводят семинар на
+                                тему финансовой грамотности для обучающихся и студентов общеобразовательных учреждений
+                                Lorem,
+                                ipsum dolor sit amet consectetur adipisicing elit. Dolor alias voluptatem rerum
+                                aspernatur est pariatur atque repudiandae eos, optio quam.
+                            </p>
+                        </div>
+                        <a href="/new.html"><div class="button_grey">Читать дальше</div></a>
+                    </div>
+                </div>
+
+                <div class="new">
+                    <div class="new_img">
+                        <img src="/public/images/news/new1.png" alt="" srcset="">
+                    </div>
+                    <div class="newDesk">
+
+                        <div class="newDate">
+                            12.10.2023
+                        </div>
+                        <div class="newDescription">
+                            <p class="newDescriptionClip">
+                                ЦМИТ "Тетра" совместно с Министерством молодежи и АНО "Моя карьера" проводят семинар на
+                                тему финансовой грамотности для обучающихся и студентов общеобразовательных учреждений
+                                Lorem,
+                                ipsum dolor sit amet consectetur adipisicing elit. Dolor alias voluptatem rerum
+                                aspernatur est pariatur atque repudiandae eos, optio quam.
+                            </p>
+                        </div>
+                        <a href="/new.html"><div class="button_grey">Читать дальше</div></a>
+                    </div>
+                </div> -->
+
+
+            </div>
+
+
+            <div class="showMore">Показать еще +</div>
+
+            <!-- Новостной блок -->
+        </section>
+
+
+
+    </main>
+
+    <footer></footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="/js/lightbox.js"></script>
+    <script>
+        lightbox.option({
+            'disableScrolling': true,
+            'wrapAround': true,
+            'alwaysShowNavOnTouchDevices': true,
+
+            'fadeDuration': 100,
+            'imageFadeDuration': 100,
+            'resizeDuration': 100,
+            'maxHeight': 800
+
+        });
+    </script>
+    <script src="/js/header.js"></script>
+    <script src="/js/footer.js"></script>
+    <script src="/js/main.js"></script>
+    <script type="module" src="edit.js"></script>
+</body>
+
+</html>

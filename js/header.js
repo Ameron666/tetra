@@ -22,17 +22,17 @@ header.append(`
     <nav class="burger">
 
         <div class="hamburger-menu">
-            <div class="hamburger"></div>
+            <div class="hamburger"><img src="/public/images/icon/arrow_down.png" alt="" srcset=""></div>
         </div>
-
+        
         <ul class="nav-links">
 
             <li><a class="link " href="/index.html">Главная</a></li>
-            <li><a class="link " href="/pages/lessons.html">Предметы</a></li>
-            <li><a class="link " href="/pages/news.html">Новости</a></li>
-            <li><a class="link " href="/pages/events.html">Мероприятия</a></li>
-            <li><a class="link " href="/pages/about.html">О нас</a></li>
-            <li><a class="link " href="/pages/creativity.html">Творчество</a></li>
+            <li><a class="link " href="/lessons.html">Предметы</a></li>
+            <li><a class="link " href="/news.html">Новости</a></li>
+            <li><a class="link " href="/events.html">Мероприятия</a></li>
+            <li><a class="link " href="/about.html">О нас</a></li>
+            <li><a class="link " href="/creativity.html">Творчество</a></li>
             
         </ul>
     
@@ -43,19 +43,19 @@ header.append(`
             <a class="link " href="/index.html">Главная</a>
         </div>
         <div class="headerLink">
-            <a class="link " href="/pages/lessons.html">Предметы</a>
+            <a class="link " href="/lessons.html">Предметы</a>
         </div>
         <div class="headerLink">
-            <a class="link " href="/pages/news.html">Новости</a>
+            <a class="link " href="/news.html">Новости</a>
         </div>
         <div class="headerLink">
-            <a class="link " href="/pages/events.html">Мероприятия</a>
+            <a class="link " href="/events.html">Мероприятия</a>
         </div>
         <div class="headerLink">
-            <a class="link " href="/pages/about.html">О нас</a>
+            <a class="link " href="/about.html">О нас</a>
         </div>
         <div class="headerLink">
-            <a class="link " href="/pages/creativity.html">Творчество</a>
+            <a class="link " href="/creativity.html">Творчество</a>
         </div>
     </div>
 </section>
