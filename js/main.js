@@ -15,7 +15,7 @@ $(".tetra_svg_div").on("click", (e) => {
 });
 
 $(".tetra_svg_div").on("mousedown", (e) => {
-  if (e.which === 2) { // Проверяем, что нажата средняя кнопка мыши
+  if (e.which === 2) { // Проверяем, что нажата средняя кнопка мыши 
     if (e.target.closest(".tetra_svg")) {
       let lesson = e.target.closest(".tetra_svg").getAttribute("svg_num");
       window.open( lesson + ".html", '_blank');
