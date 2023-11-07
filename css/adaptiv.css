@@ -35,9 +35,8 @@
 
   nav {
     position: absolute;
-    top: 10px;
+    top: 35px;
     right: 10px;
-    /* display: flex; */
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
@@ -61,17 +60,13 @@
     width: 20px;
     height: 20px;
     padding: 2px;
-    /* background-color: white; */
     margin: 2px;
   }
+
   .hamb_active {
     transform: rotateX(180deg);
   }
 
-  .hamburger {
-    width: 30px;
-    height: 30px;
-  }
   .hamburger img {
     width: var(--width-block100);
   }
@@ -89,23 +84,23 @@
   }
 
   .nav-links li a {
-    /* text-decoration: none; */
     padding: 5px 0;
-    /* margin: 5px 0; */
   }
+
   .link {
     display: flex;
-    /* min-width: 200px; */
+
     width: var(--width-block100);
     color: var(--color-white);
-    border: 1px solid red;
   }
+
   .show-menu {
     display: flex;
     flex-direction: column;
   }
 
   header {
+    margin: 0;
     padding: 0 20px;
     justify-content: flex-start;
   }
@@ -115,20 +110,24 @@
   }
 
   footer {
-    display: none;
-    /* justify-content: flex-start; */
+    padding: 0;
+    height: auto;
   }
 
-  /*  */
+  .footerBlock {
+    flex-direction: column;
+  }
 
-  .tetraSection {
-    /* display: none; */
-    /* transform: scale(0.5); */
+  .footerLeft,
+  .footerRight {
+    width: var(--width-block100);
+    padding: 5px 10px;
   }
 
   .tetra_img {
     display: none;
   }
+
   .tetra425 {
     overflow: hidden;
     position: relative;
@@ -136,7 +135,7 @@
     justify-content: center;
     align-items: center;
     width: var(--width-block100);
-    height: 600px;
+    height: 520px;
     padding: 10px 6px;
   }
 
@@ -145,6 +144,46 @@
   }
 
   .tetraHardSection {
+    height: auto;
+    margin-top: 50px;
+  }
+
+  .tetraHardAdapBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .tetraHardAdap {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 16px;
+    min-height: 90px;
+    width: var(--width-block100);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+  }
+
+  .tetra_span {
+    text-shadow: none;
+    font-size: 26px;
+    opacity: 0.8;
+
+    color: var(--color-white);
+  }
+
+  .tetra_small {
+    font-size: 22px;
+    color: var(--color-white);
+  }
+
+  .tetraHardBlock {
+    display: none;
+  }
+
+  .tetra_svg_div svg {
     display: none;
   }
 
@@ -161,13 +200,11 @@
     justify-content: space-around;
     padding: 40px 10px 10px;
     gap: 10px;
-    /* width: 320px; */
   }
 
   .tetraInfo {
     gap: 10px;
-    width: 120px;
-    /* height: 200px; */
+    width: 160px;
   }
 
   .tetraInfo_img {
@@ -184,7 +221,7 @@
   }
 
   .teachersSection {
-    /* margin: 0; */
+    margin-top: 60px;
     padding: 10px 0;
   }
 
@@ -193,12 +230,15 @@
     gap: 10px;
     width: var(--width-block100);
   }
+
   .photosBlock .teacher {
     width: var(--width-block100);
   }
+
   .photosBlock .teacher .teacher_img {
     height: 300px;
   }
+
   .teacher {
     width: 150px;
   }
@@ -236,13 +276,16 @@
     width: 298px;
     height: 240px;
   }
+
   .newDesk {
     gap: 10px;
   }
+
   .newDate {
     font-size: 16px;
     padding: 10px 5px 5px 5px;
   }
+
   .newDescription {
     margin-top: -20px;
     width: 280px;
@@ -258,14 +301,16 @@
   .newsSearch {
     align-items: center;
     width: var(--width-block100);
-    /* justify-content: flex-start; */
     flex-wrap: wrap;
     gap: 20px;
   }
 
+  .news_search {
+    width: var(--width-block100);
+  }
+
   .news_input {
     width: var(--width-block100);
-    /* width: 400px; */
   }
 
   .photosSection {
@@ -322,6 +367,7 @@
   }
 
   .lessonsBlock {
+    padding: 20px 0;
     align-items: center;
   }
 
@@ -344,6 +390,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+  }
+
+  .lessonTitleHeight {
+    width: 100%;
+    height: auto;
   }
 
   .lesson_img {
@@ -370,7 +422,6 @@
 
   .thisLessonDescription {
     min-height: 450px;
-    /* height: 450px; */
     padding: 10px 5px 30px;
     width: var(--width-block100);
   }
@@ -388,12 +439,9 @@
     height: auto;
     padding: 10px;
   }
+
   .thisLessonContent {
     gap: 10px;
-    /* width: 90%; */
-  }
-  .timeTableGroup {
-    /* justify-content: space-around; */
   }
 
   .creativity_img {
@@ -403,21 +451,22 @@
 
   .creativityText {
     padding: 10px;
-    /* gap: 20px; */
     width: var(--width-block100);
     height: 100%;
   }
+
   .creativityBlock {
-    /* height: 100vh; */
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-bottom: 100px;
   }
+
   .creativityTitle {
     text-align: center;
     width: var(--width-block100);
   }
+
   .creativityContent {
     width: var(--width-block100);
     height: 600px;
@@ -428,9 +477,11 @@
   .prev {
     left: 10px;
   }
+
   .next {
     right: 10px;
   }
+
   .prev,
   .next {
     top: 400px;
@@ -438,6 +489,7 @@
     height: 35px;
     padding: 2px;
   }
+
   .prev img,
   .next img {
     width: var(--width-block100);
@@ -450,10 +502,21 @@
   .about {
     padding: 10px;
   }
+
+  .aboutSection {
+    padding: 0;
+  }
+
   .about_img {
     width: var(--width-block100);
     height: auto;
   }
+
+  .achivementsSection {
+    gap: 40px;
+    padding: 20px 0 40px;
+  }
+
   .achivements {
     flex-wrap: wrap;
   }
@@ -462,9 +525,11 @@
     width: 45%;
     gap: 10px;
   }
+
   .achivementNumber {
     font-size: 36px;
   }
+
   .achivementContent {
     font-size: 14px;
   }
@@ -478,9 +543,6 @@
     flex-direction: column;
   }
 
-  .possibleBlock :first-child {
-    /* display: block; */
-  }
   .possible {
     display: flex;
     flex-direction: column;
@@ -489,16 +551,18 @@
     border: none;
     height: 400px;
     width: var(--width-block100);
-    /* display: none; */
   }
+
   .possibleText {
     align-items: center;
     justify-content: center;
     padding: 20px 5px 0;
   }
+
   .possibleContent {
     width: 90%;
   }
+
   .possible_img {
     margin: 0;
     width: 350px;
@@ -514,77 +578,95 @@
     flex-direction: column;
     gap: 20px;
   }
+
   .calendar {
     padding: 40px 20px;
     height: 400px;
   }
+
   .calendarToday {
     width: var(--width-block100);
   }
+
   .today_img {
     width: var(--width-block100);
   }
+
   .todayContent {
     font-size: 13px;
     line-height: normal;
   }
+
   .todayEvent {
     font-size: 14px;
     padding: 10px 10px 0;
     align-items: flex-start;
   }
+
   .cview__month-current {
     font-size: 16px;
   }
+
   .cview__month-last,
   .cview__month-next {
     font-size: 14px;
   }
+
   .thisEventHead {
     flex-direction: column;
     gap: 20px;
   }
+
   .thisEvent_img {
     width: var(--width-block100);
     height: 200px;
   }
+
   .thisEventTitle {
     font-size: 16px;
     width: var(--width-block100);
   }
+
   .thisEventHeadBlock {
     gap: 20px;
     padding: 20px 10px;
   }
+
   .thisEventSection {
     justify-content: center;
   }
+
   .thisEventBlock {
     flex-direction: column;
     justify-content: center;
   }
+
   .thisEventGalery {
     width: var(--width-block100);
     justify-content: center;
   }
+
   .thisEventGalery a {
     width: 160px;
     height: 150px;
   }
+
   .thisEventContentBlock {
     width: var(--width-block100);
     padding: 60px 5px 20px;
   }
+
   .thisEventContent {
     font-size: 15px;
     line-height: 20px;
   }
-
 }
 
+/* --------________--------________--------________--------________--------________--------________ */
+
+/* --------________--------________--------________--------________--------________--------________ */
 
 @media (min-width: 768px) and (max-width: 1024px) {
-
   :root {
     --width-block: 100%;
     --width-block100: 100%;
@@ -594,23 +676,28 @@
     display: flex;
   }
 
-  .title32{
+  .title32 {
     font-size: 26px;
   }
 
   .headerLinks {
-    display: none;
+    gap: 10px;
+    font-size: 12px;
+    justify-content: center;
   }
 
   .burger {
-    display: flex;
+    display: none;
+  }
+
+  .mainLogo {
+    width: 170px;
   }
 
   nav {
     position: absolute;
     top: 10px;
     right: 10px;
-    /* display: flex; */
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
@@ -634,9 +721,9 @@
     width: 20px;
     height: 20px;
     padding: 2px;
-    /* background-color: white; */
     margin: 2px;
   }
+
   .hamb_active {
     transform: rotateX(180deg);
   }
@@ -645,6 +732,7 @@
     width: 30px;
     height: 30px;
   }
+
   .hamburger img {
     width: var(--width-block100);
   }
@@ -662,17 +750,15 @@
   }
 
   .nav-links li a {
-    /* text-decoration: none; */
     padding: 5px 0;
-    /* margin: 5px 0; */
   }
+
   .link {
     display: flex;
-    /* min-width: 200px; */
     width: var(--width-block100);
     color: var(--color-white);
-    border: 1px solid red;
   }
+
   .show-menu {
     display: flex;
     flex-direction: column;
@@ -681,22 +767,29 @@
   header {
     padding: 0 20px;
     justify-content: flex-start;
+    margin: 0;
   }
 
-
   /* header,  */
-  footer{
-    display: none;
+  footer {
+    padding: 0 10px;
+  }
+
+  .footerLeft,
+  .footerRight {
+    padding: 0 10px;
+  }
+
+  .tetraInfoSection {
+    padding: 0;
   }
 
   .tetraInfo {
     gap: 10px;
-    width: 280px;
-    /* height: 200px; */
+    width: 300px;
   }
 
-  .tetraInfoBlock{
-    width: 740px;
+  .tetraInfoBlock {
     gap: 40px;
     padding: 0 20px;
     justify-content: center;
@@ -715,217 +808,254 @@
     font-size: 13px;
   }
 
-.teachers{
-  width: 760px;
-  gap: 20px;
-  justify-content: center;
+  .teachersSection {
+    padding: 40px 0 20px;
+  }
+
+  .teachers {
+    width: 760px;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .tetraSection {
+    overflow: hidden;
+    width: 920px;
+    margin-left: -80px;
+    transform: scale(0.8);
+  }
+
+  .visit_svg_1,
+  .visit_svg_2,
+  .visit_svg_6,
+  .visit_svg_7,
+  .visit_svg_10,
+  .visit_svg_11 {
+    display: none;
+  }
+
+  .tetraHardSection {
+    height: 640px;
+    width: 100%;
+  }
+
+  .tetraHardBlock {
+    width: 100%;
+  }
+
+  .tetra_hard_svg {
+    margin-left: -180px;
+    transform: scale(0.45);
+  }
+
+  .newsBlock {
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .new {
+    min-width: 330px;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .new_img {
+    min-width: 328px;
+    width: 100%;
+    max-width: 358px;
+  }
+
+  .newDescription {
+    width: 340px;
+  }
+
+  .newThis_img {
+    width: 320px;
+  }
+
+  .newTitle {
+    padding: 2px 10px;
+  }
+
+  .newsSearch {
+    flex-wrap: wrap;
+  }
+
+  .news_input {
+    width: 760px;
+    max-width: var(--width-block100);
+  }
+
+  .lesson {
+    padding: 10px;
+    width: 360px;
+    height: auto;
+  }
+
+  .lessonTitleHeight {
+    height: auto;
+  }
+
+  .lessonTitleBlock .lesson_svg {
+    margin-left: -35px;
+    transform: scale(0.8);
+    height: 150px;
+  }
+
+  .lesson_img {
+    padding: 5px 0;
+  }
+
+  .lessonSection {
+    flex-direction: column;
+  }
+
+  .thisLessonTitleBlock {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .photosBlock {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .calendarBlock {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .calendarToday {
+    width: 690px;
+  }
+
+  .today_img {
+    width: 690px;
+    height: 420px;
+  }
+
+  .todayEvents {
+    height: 320px;
+  }
+
+  .calendar {
+    padding: 40px;
+    height: 600px;
+  }
+
+  .thisEventSection {
+    gap: 20px;
+  }
+
+  .thisEventHeadBlock {
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .thisEventHead {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .thisEvent_img {
+    width: 760px;
+  }
+
+  .thisEventTitle {
+    margin-left: 20px;
+    width: 740px;
+  }
+
+  .thisEventButton {
+    margin-left: 20px;
+  }
+
+  .thisEventBlock {
+    flex-direction: column-reverse;
+    padding: 20px 0 40px;
+  }
+
+  .thisEventContentBlock {
+    width: 100%;
+  }
+
+  .thisEventGalery {
+    width: 100%;
+  }
+
+  .aboutUs {
+    flex-direction: column;
+  }
+
+  .about {
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .aboutTetris {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about_img {
+    width: 740px;
+    height: auto;
+  }
+
+  .possibleBlock {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .possible,
+  .possible_img {
+    width: 400px;
+  }
+
+  .prev {
+    left: 0;
+  }
+
+  .next {
+    right: 0;
+  }
+
+  .creativityBlock {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .creativityText {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .creativity_img {
+    width: 100%;
+  }
 }
-.tetraSection{
-  display: none;
-  transform: scale(0.7);
+
+@media (min-width: 1000px) and (max-width: 1024px) {
+  .tetra_hard_svg {
+    margin-left: -180px;
+    transform: scale(0.6);
+  }
+
+  .tetraHardSection {
+    height: 900px;
+  }
+
+  .lessonsBlock {
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .tetraSection {
+    overflow: hidden;
+    width: 1100px;
+    transform: scale(0.9);
+  }
 }
-.tetraHardSection{
-  display: none;
-}
-.newsBlock{
-  gap: 10px;
-  width: 100%;
-  justify-content: center;
-}
-
-.new{
-  min-width: 330px;
-  width: 100%;
-  max-width: 360px;
-}
-.new_img{
-  min-width: 328px;
-  width: 100%;
-  max-width: 358px;
-}
-.newDescription{
-  width: 340px;
-}
-.newThis_img{
-  width: 320px;
-}
-.newTitle{
-  padding: 2px 10px;
-}
-
-
-.newsSearch{
-  flex-wrap: wrap;
-}
-
-.news_input{
-  width: 760px;
-  max-width: var(--width-block100);
-}
-
-.lesson{
-  padding: 10px;
-  width: 360px;
-  height: 640px;
-/* height: 100%; */
-}
-.lessonTitleBlock .lesson_svg{
-  margin-left: -35px;
-  transform: scale(0.8);
-  height: 150px;
-}
-
-.lesson_img{
-  padding: 5px 0;
-}
-
-
-.lessonSection{
-  flex-direction: column;
-}
-
-
-.thisLessonTitleBlock{
-  flex-direction: column;
-  gap: 40px;
-}
-
-.photosBlock{
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
-}
-
-.calendarBlock{
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-}
-
-.calendarToday{
-  width: 690px;
-}
-.today_img{
-  width: 690px;
-  height: 420px;
-}
-.todayEvents{
-  height: 320px;
-}
-.calendar{
-  padding: 40px;
-  height: 600px;
-}
-
-.thisEventSection{
-  gap: 20px;
-}
-.thisEventHeadBlock{
-  gap: 20px;
-  padding: 20px 0; 
-}
-.thisEventHead{
-  flex-direction: column;
-  gap: 20px;
-}
-.thisEvent_img{
-  width: 760px;
-}
-
-.thisEventTitle {
-  margin-left: 20px;
-  width: 740px;
-}
-.thisEventButton{
-  margin-left: 20px;
-}
-.thisEventBlock{
-flex-direction: column-reverse;
-padding: 20px 0 40px;
-}
-
-.thisEventContentBlock{
-  width: 100%;
-}
-
-.thisEventGalery{
-  width: 100%;
-}
-
-.aboutUs{
-  flex-direction: column;
-}
-.about{
-  gap: 10px;
-  padding: 20px;
-}
-.aboutTetris{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.about_img{
-  width: 740px;
-  height: auto;
-}
-
-.possibleSection {
-
-}
-.possibleBlock{
-  gap: 10px;
-  /* flex-direction: column; */
-  flex-wrap: wrap;
-}
-
-.possible,.possible_img{
-width: 400px;
-}
-
-.prev{
-  left: 0;
-}
-.next{
-  right: 0;
-}
-
-.creativityBlock{
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
-}.creativityText{
-  width: 100%;
-  padding: 30px;
-}.creativity_img{
-  width: 100%;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-} 

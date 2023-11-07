@@ -147,7 +147,7 @@ header {
   align-items: center;
   justify-content: center;
   padding: 0 150px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .headerSection {
@@ -174,7 +174,7 @@ header {
 }
 
 .headerLink {
-  min-width: 70px;
+  /* min-width: 70px; */
   width: 100%;
   text-align: center;
 }
@@ -311,10 +311,10 @@ footer {
 
 .tetraInfoBlock {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: var(--width-block);
   padding: 0 50px;
-  gap: 50px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
@@ -323,7 +323,8 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  width: 100%;
+  width: 275px;
+  /* max-width: 100%; */
   text-align: center;
 }
 
@@ -363,7 +364,9 @@ footer {
 .tetraHardBlock {
   width: var(--width-block);
 }
-
+.tetraHardAdapBlock {
+  display: none;
+}
 .tetra_hard_img {
   width: var(--width-block);
   height: auto;
@@ -431,7 +434,6 @@ footer {
 }
 
 .teacherSpecial {
-
   text-align: center;
   font-size: 20px;
   height: 60px;
@@ -461,7 +463,7 @@ footer {
   /* justify-content: space-between; */
   flex-wrap: wrap;
   gap: 40px;
-  padding-top: 60px;
+  padding-top: 20px;
   width: var(--width-block);
 }
 
@@ -626,10 +628,12 @@ footer {
 .newThis {
   display: flex;
   flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
   gap: 20px;
   width: var(--width-block);
   background-color: var(--color-white-transparent1);
-  padding: 30px 40px;
+  padding: 20px 60px;
 }
 
 .newThisTitle {
@@ -643,8 +647,9 @@ footer {
 
 .newThis_images {
   display: flex;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  padding: 40px 0 20px;
+  padding: 10px;
   gap: 28px;
 }
 
@@ -656,7 +661,7 @@ footer {
   align-items: center;
   background-color: var(--color-grey-light);
   box-shadow: 0 0 10px 1px black;
-
+  border-radius: 3px;
   width: 375px;
   height: 267px;
 }
@@ -918,7 +923,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  padding: 10px 40px;
+  padding: 10px 10px 0;
+  gap: 40px;
 }
 
 .today {
@@ -946,18 +952,19 @@ footer {
 }
 
 .todayEvent {
+  gap: 40px;
   font-size: 16px;
   font-weight: 400;
   line-height: 160%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 40px;
+  padding: 8px 10px;
   border: 1px solid var(--color-background-footer);
 }
 
 .todayTime {
-  width: 75px;
+  width: 90px;
 }
 
 .todayContent {
@@ -967,6 +974,10 @@ footer {
 
 .calendar {
   background-color: var(--color-background-footer);
+}
+.calendar_img {
+  text-align: center;
+  width: 90px;
 }
 
 /* calendar */
@@ -1159,9 +1170,25 @@ footer {
 }
 
 .thisLessonDescription {
+  padding-right: 10px;
+  overflow: hidden;
+  overflow-y: scroll;
   padding-top: 30px;
   width: 750px;
   height: 420px;
+}
+
+.thisLessonDescription::-webkit-scrollbar {
+  width: 4px;
+}
+
+.thisLessonDescription::-webkit-scrollbar-track {
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+  background-color: var(--color-background);
+}
+
+.thisLessonDescription::-webkit-scrollbar-thumb {
+  background-color: var(--color-red-transparent6);
 }
 
 .thisLesson_img {
@@ -1268,7 +1295,7 @@ footer {
 }
 
 /* Tetra svg */
-.tetra425{
+.tetra425 {
   display: none;
 }
 .visit_svg {

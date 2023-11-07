@@ -38,39 +38,7 @@ function CalendarApp(date) {
       "Ноябрь",
       "Декабрь",
     ];
-    this.quotes = [
-      "Whatever the mind of man can conceive and believe, it can achieve. –Napoleon Hill",
-      "Strive not to be a success, but rather to be of value. –Albert Einstein",
-      "Two roads diverged in a wood, and I—I took the one less traveled by, And that has made all the difference.  –Robert Frost",
-      "I attribute my success to this: I never gave or took any excuse. –Florence Nightingale",
-      "You miss 100% of the shots you don’t take. –Wayne Gretzky",
-      "The most difficult thing is the decision to act, the rest is merely tenacity. –Amelia Earhart",
-      "Every strike brings me closer to the next home run. –Babe Ruth",
-      "Definiteness of purpose is the starting point of all achievement. –W. Clement Stone",
-      "Life isn’t about getting and having, it’s about giving and being. –Kevin Kruse",
-      "Life is what happens to you while you’re busy making other plans. –John Lennon",
-      "We become what we think about. –Earl Nightingale",
-      "Life is 10% what happens to me and 90% of how I react to it. –Charles Swindoll",
-      "The most common way people give up their power is by thinking they don’t have any. –Alice Walker",
-      "The mind is everything. What you think you become.  –Buddha",
-      "Winning isn’t everything, but wanting to win is. –Vince Lombardi",
-      "Every child is an artist.  The problem is how to remain an artist once he grows up. –Pablo Picasso",
-      " You can never cross the ocean until you have the courage to lose sight of the shore. –Christopher Columbus",
-      "I’ve learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel. –Maya Angelou",
-      "Either you run the day, or the day runs you. –Jim Rohn",
-      "Whether you think you can or you think you can’t, you’re right. –Henry Ford",
-      "The two most important days in your life are the day you are born and the day you find out why. –Mark Twain",
-      "Whatever you can do, or dream you can, begin it.  Boldness has genius, power and magic in it. –Johann Wolfgang von Goethe",
-      "The best revenge is massive success. –Frank Sinatra",
-      "People often say that motivation doesn’t last. Well, neither does bathing.  That’s why we recommend it daily. –Zig Ziglar",
-      "Life shrinks or expands in proportion to one’s courage. –Anais Nin",
-      "If you hear a voice within you say “you cannot paint,” then by all means paint and that voice will be silenced. –Vincent Van Gogh",
-      "There is only one way to avoid criticism: do nothing, say nothing, and be nothing. –Aristotle",
-      "Ask and it will be given to you; search, and you will find; knock and the door will be opened for you. –Jesus",
-      "The only person you are destined to become is the person you decide to be. –Ralph Waldo Emerson",
-      "Go confidently in the direction of your dreams.  Live the life you have imagined. –Henry David Thoreau",
-      "Few things can help an individual more than to place responsibility on him, and to let him know that you trust him.  –Booker T. Washington",
-    ];
+    
     this.apts = [
       {
         name: "Finish this web app",
@@ -129,7 +97,7 @@ function CalendarApp(date) {
     this.showView(date);
     this.addEventListeners();
     this.todayIsSpan.textContent =
-      "Сегодня: " + this.months[date.getMonth()] + " " + date.getDate();
+    date.getDate() + " " + this.months[date.getMonth()] + " " + date.getFullYear();
       
   }
   
@@ -138,7 +106,7 @@ function CalendarApp(date) {
       "click",
       this.mainCalendarClickClose.bind(this)
     );
-    this.todayIsSpan.addEventListener("click", this.showView.bind(this));
+    // this.todayIsSpan.addEventListener("click", this.showView.bind(this));
     this.calendarMonthLastDiv.addEventListener(
       "click",
       this.showNewMonth.bind(this)
@@ -213,7 +181,7 @@ function CalendarApp(date) {
       day.className = "cview--date";
       day.textContent = z;
       day.setAttribute("data-date", _date);
-    //   day.onclick = this.showDay.bind(this);
+      day.onclick = this.showDay.bind(this);
   
       // check if todays date
       if (
@@ -257,10 +225,16 @@ function CalendarApp(date) {
   
     this.calDaySelected = dayEle;
   
-    this.openDayWindow(dayDate);
+    // this.openDayWindow(dayDate);
   };
   
+  /* 
+  
+  
   CalendarApp.prototype.openDayWindow = function (date) {
+
+
+    
     var now = new Date();
     var day = new Date(date);
     this.dayViewDateEle.textContent =
@@ -274,7 +248,7 @@ function CalendarApp(date) {
     this.dayViewDateEle.setAttribute("data-date", day);
     this.dayViewEle.classList.add("calendar--day-view-active");
   
-    /* Contextual lang changes based on tense. Also show btn for scheduling future events */
+    // Contextual lang changes based on tense. Also show btn for scheduling future events
     var _dayTopbarText = "";
     if (day < new Date(now.getFullYear(), now.getMonth(), now.getDate())) {
       _dayTopbarText = "had ";
@@ -288,8 +262,7 @@ function CalendarApp(date) {
     var eventsToday = this.showEventsByDay(day);
     if (!eventsToday) {
       _dayTopbarText += "no ";
-      var _rand = Math.round(Math.random() * (this.quotes.length - 1 - 0) + 0);
-      this.dayInspirationalQuote.textContent = this.quotes[_rand];
+
     } else {
       _dayTopbarText += eventsToday.length + " ";
       this.dayInspirationalQuote.textContent = null;
@@ -311,6 +284,8 @@ function CalendarApp(date) {
       day.getFullYear();
   };
   
+  */
+
   CalendarApp.prototype.showEventsCreateElesView = function (events) {
     var ul = document.createElement("ul");
     ul.className = "day-event-list-ul";
@@ -347,12 +322,7 @@ function CalendarApp(date) {
       div.className = "event-dates";
       div.innerHTML = html;
   
-      var deleteBtn = document.createElement("span");
-      var deleteText = document.createTextNode("delete");
-      deleteBtn.className = "event-delete";
-      deleteBtn.setAttribute("data-idx", idx);
-      deleteBtn.appendChild(deleteText);
-      deleteBtn.onclick = _this.deleteEvent.bind(_this);
+
   
       div.appendChild(deleteBtn);
   
@@ -362,26 +332,26 @@ function CalendarApp(date) {
     return ul;
   };
   
-  CalendarApp.prototype.deleteEvent = function (e) {
-    var deleted = this.apts.splice(e.currentTarget.getAttribute("data-idx"), 1);
-    var deletedDate = new Date(deleted[0].day);
-    var anyDatesLeft = this.showEventsByDay(deletedDate);
-    if (anyDatesLeft === false) {
-      // safe to remove from array
-      var idx = this.aptDates.indexOf(deletedDate.toString());
-      if (idx >= 0) {
-        this.aptDates.splice(idx, 1);
-        // remove dot from calendar view
-        var ele = document.querySelector(
-          '.cview--date[data-date="' + deletedDate.toString() + '"]'
-        );
-        if (ele) {
-          ele.classList.remove("has-events");
-        }
-      }
-    }
-    this.openDayWindow(deletedDate);
-  };
+  // CalendarApp.prototype.deleteEvent = function (e) {
+  //   var deleted = this.apts.splice(e.currentTarget.getAttribute("data-idx"), 1);
+  //   var deletedDate = new Date(deleted[0].day);
+  //   var anyDatesLeft = this.showEventsByDay(deletedDate);
+  //   if (anyDatesLeft === false) {
+  //     // safe to remove from array
+  //     var idx = this.aptDates.indexOf(deletedDate.toString());
+  //     if (idx >= 0) {
+  //       this.aptDates.splice(idx, 1);
+  //       // remove dot from calendar view
+  //       var ele = document.querySelector(
+  //         '.cview--date[data-date="' + deletedDate.toString() + '"]'
+  //       );
+  //       if (ele) {
+  //         ele.classList.remove("has-events");
+  //       }
+  //     }
+  //   }
+  //   this.openDayWindow(deletedDate);
+  // };
   
   CalendarApp.prototype.sortEventsByTime = function (events) {
     if (!events) return [];

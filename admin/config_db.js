@@ -43,7 +43,7 @@ export function schema() {
                 "required": true
             },
             "date": {
-                "name": "Дата загрузки мероприятия",
+                "name": "Дата мероприятия",
                 "element": "input",
                 "type": "date",
                 "required": true
