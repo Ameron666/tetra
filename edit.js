@@ -46,7 +46,7 @@ getData("news", "", "admin").then((response) => {
                         ${element.title}
                         </p>
                     </div>
-                    <a href="/new.html?id_new=${element.id}">
+                    <a href="new.html?id_new=${element.id}">
                         <div class="button_grey">Читать дальше</div>
                     </a>
                 </div>
@@ -148,7 +148,7 @@ getData("news", "", "admin").then((response) => {
                         ${response[i].title}
                         </p>
                     </div>
-                    <a href="/new.html?id_new=${response[i].id}">
+                    <a href="new.html?id_new=${response[i].id}">
                         <div class="button_grey">Читать дальше</div>
                     </a>
                 </div>
@@ -182,7 +182,7 @@ getData("events", "", "admin").then((response) => {
                     ${element.title}
                     </p>
                 </div>
-                <a href="/event.html?id_event=${element.id}"><div class="button_grey">Читать дальше</div></a>
+                <a href="event.html?id_event=${element.id}"><div class="button_grey">Читать дальше</div></a>
             </div>
         </div>
         `;

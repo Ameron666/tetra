@@ -121,7 +121,35 @@
   .footerLeft,
   .footerRight {
     width: var(--width-block100);
-    padding: 5px 10px;
+    padding: 15px 10px;
+  }
+
+  .contact_img{
+    width: 20px;
+  }
+
+  .footerLeftInfo{
+    font-size: 14px;
+    line-height: 150%;
+  }
+
+  .footerContacts{
+    gap: 20px;
+  }
+
+  .contactUs{
+    font-size: 18px;
+  }
+
+  .contact{
+    font-size: 16px;
+  }
+  .contact a{
+    font-size: 16px;
+  }
+
+  .contactSocial{
+    justify-content: center;
   }
 
   .tetra_img {
@@ -145,7 +173,7 @@
 
   .tetraHardSection {
     height: auto;
-    margin-top: 50px;
+    margin-top: 0px;
   }
 
   .tetraHardAdapBlock {
@@ -221,8 +249,8 @@
   }
 
   .teachersSection {
-    margin-top: 60px;
-    padding: 10px 0;
+    margin-top: 30px;
+    gap: 30px;
   }
 
   .teachers {
@@ -262,6 +290,7 @@
 
   .newsSection {
     gap: 20px;
+    padding: 0;
   }
 
   .newsBlock {
@@ -269,11 +298,11 @@
   }
 
   .new {
-    width: 300px;
+    width: 100%;
   }
 
   .new_img {
-    width: 298px;
+    width: 100%;
     height: 240px;
   }
 
@@ -324,7 +353,7 @@
   }
 
   .photos_big_img a {
-    width: 298px;
+    width: 100%;
     height: 200px;
   }
 
@@ -375,7 +404,7 @@
     align-items: center;
     width: var(--width-block100);
     height: auto;
-    padding: 8px;
+    padding: 20px 15px;
   }
 
   .lessonSection {
@@ -391,6 +420,10 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+  }
+
+  .lessonTitle{
+    text-align: center;
   }
 
   .lessonTitleHeight {
@@ -500,7 +533,13 @@
   }
 
   .about {
-    padding: 10px;
+    padding: 20px 10px;
+    gap: 20px;
+  }
+
+  .aboutContent{
+    font-size: 16px;
+    line-height: 25px;
   }
 
   .aboutSection {
@@ -522,8 +561,12 @@
   }
 
   .achivement {
-    width: 45%;
+    width: 43%;
     gap: 10px;
+  }
+
+  .kostyl{
+    height: 30px;
   }
 
   .achivementNumber {
@@ -659,6 +702,10 @@
   .thisEventContent {
     font-size: 15px;
     line-height: 20px;
+  }
+
+  .newTitle{
+    padding-top: 40px;
   }
 }
 

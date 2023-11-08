@@ -357,7 +357,7 @@ footer {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 1700px;
+  height: 1600px;
   margin-top: 100px;
 }
 
@@ -385,8 +385,8 @@ footer {
 /* teachers  */
 
 .teachersSection {
-  margin-top: 80px;
-  padding: 60px 0;
+  /* margin-top: 80px;
+  padding: 60px 0; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -451,7 +451,7 @@ footer {
 
 /* news */
 .newsSection {
-  padding: 40px 0 80px;
+  padding: 40px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -661,7 +661,7 @@ footer {
   justify-content: center;
   align-items: center;
   background-color: var(--color-grey-light);
-  box-shadow: 0 0 10px 1px black;
+  /* box-shadow: 0 0 10px 1px black; */
   border-radius: 3px;
   width: 375px;
   height: 267px;
@@ -1148,7 +1148,7 @@ footer {
 .thisLesson {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 50px;
 }
 
 .thisLessonTitleBlock {
