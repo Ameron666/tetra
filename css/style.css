@@ -397,18 +397,21 @@ footer {
 .teachers {
   flex-wrap: wrap;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: flex-start;
   width: var(--width-block);
 
-  gap: 40px;
+  /* gap: 40px; */
 }
 
 .teacher {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-  width: 320px;
+  /* width: 320px; */
+  width: 25%;
   gap: 20px;
 }
 
@@ -436,7 +439,7 @@ footer {
 .teacherSpecial {
   text-align: center;
   font-size: 20px;
-  height: 60px;
+  /* height: 60px; */
 }
 
 .teacherDescription {
@@ -740,9 +743,7 @@ footer {
   align-items: center;
   background-color: var(--color-grey-light);
   border-radius: 3px;
-
-  box-shadow: 0 0 10px 1px black;
-
+  /* box-shadow: 0 0 10px 1px black; */
   width: 360px;
   height: 250px;
 }

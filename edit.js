@@ -8,17 +8,25 @@ function addLeadingZero(number) {
 
 function convertDate(date) {
   let str = date;
-  let data = str.split('-');
-  let changeDate = data[2] + '.' + data[1] + '.' + data[0];
+  let data = str.split("-");
+  let changeDate = data[2] + "." + data[1] + "." + data[0];
   return changeDate;
 }
 
-console.log(convertDate('2015-01-01'))
-
 function getMonthName(monthNumber) {
   const months = [
-      "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
-      "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
+    "Январь",
+    "Февраль",
+    "Март",
+    "Апрель",
+    "Май",
+    "Июнь",
+    "Июль",
+    "Август",
+    "Сентябрь",
+    "Октябрь",
+    "Ноябрь",
+    "Декабрь",
   ];
   return months[monthNumber];
 }
@@ -27,11 +35,12 @@ function getMonthName(monthNumber) {
 getData("news", "", "admin").then((response) => {
   $("#news_all").empty();
 
- 
   response.forEach(function (element) {
     const dateObj = new Date(element.date);
-    const formattedDate = `${addLeadingZero(dateObj.getDate())}.${addLeadingZero(dateObj.getMonth() + 1)}.${dateObj.getFullYear()}`;
-  
+    const formattedDate = `${addLeadingZero(
+      dateObj.getDate()
+    )}.${addLeadingZero(dateObj.getMonth() + 1)}.${dateObj.getFullYear()}`;
+
     let block = `
             <div class="new">
                 <div class="new_img">
@@ -96,7 +105,9 @@ getData("news", "", "admin").then((response) => {
 
   for (let i = 0; i < value; i++) {
     const dateObj = new Date(response[i].date);
-    const formattedDate = `${addLeadingZero(dateObj.getDate())}.${addLeadingZero(dateObj.getMonth() + 1)}.${dateObj.getFullYear()}`;
+    const formattedDate = `${addLeadingZero(
+      dateObj.getDate()
+    )}.${addLeadingZero(dateObj.getMonth() + 1)}.${dateObj.getFullYear()}`;
     block.append(`
             <div class="new">
                 <div class="new_img">
@@ -133,7 +144,9 @@ getData("news", "", "admin").then((response) => {
 
   for (let i = 0; i < value; i++) {
     const dateObj = new Date(response[i].date);
-    const formattedDate = `${addLeadingZero(dateObj.getDate())}.${addLeadingZero(dateObj.getMonth() + 1)}.${dateObj.getFullYear()}`;
+    const formattedDate = `${addLeadingZero(
+      dateObj.getDate()
+    )}.${addLeadingZero(dateObj.getMonth() + 1)}.${dateObj.getFullYear()}`;
     block.append(`
             <div class="new">
                 <div class="new_img">
@@ -166,7 +179,9 @@ getData("events", "", "admin").then((response) => {
 
   response.forEach(function (element) {
     const dateObj = new Date(element.date);
-    const formattedDate = `${addLeadingZero(dateObj.getDate())}.${addLeadingZero(dateObj.getMonth() + 1)}.${dateObj.getFullYear()}`;
+    const formattedDate = `${addLeadingZero(
+      dateObj.getDate()
+    )}.${addLeadingZero(dateObj.getMonth() + 1)}.${dateObj.getFullYear()}`;
     let block = `
         <div class="new">
         <div class="new_img">
@@ -196,14 +211,14 @@ getData("events", "", "admin").then((response) => {
 getData("events", "", "admin").then((response) => {
   const currentDate = new Date();
 
-
-
   $("#todayEvents").empty();
 
   response.forEach(function (element) {
     const elementDate = new Date(element.date);
     const dateObj = new Date(element.date);
-    const formattedDate = `${addLeadingZero(dateObj.getDate())}.${addLeadingZero(dateObj.getMonth() + 1)}.${dateObj.getFullYear()}`;
+    const formattedDate = `${addLeadingZero(
+      dateObj.getDate()
+    )}.${addLeadingZero(dateObj.getMonth() + 1)}.${dateObj.getFullYear()}`;
     currentDate.setHours(0, 0, 0, 0);
     elementDate.setHours(0, 0, 0, 0);
     let block = `
@@ -225,21 +240,19 @@ getData("events", "", "admin").then((response) => {
   });
 });
 
-
 // Тестовая функция отображения мероприятий по дням
 
-$('.cview--date').click(function() {
-  const clickedDateStr = $(this).data('date'); // Получаем выбранную дату из атрибута 'data-date'
+$(".cview--date").click(function () {
+  const clickedDateStr = $(this).data("date"); // Получаем выбранную дату из атрибута 'data-date'
 
   // Преобразуем строку даты в объект Date
   const clickedDate = new Date(clickedDateStr);
   clickedDate.setHours(0, 0, 0, 0); // Убираем время
 
-
-
   // const formattedDate = `${addLeadingZero(clickedDate.getDate())}-${addLeadingZero(clickedDate.getMonth() + 1)}-${clickedDate.getFullYear()}`;
-  const formattedDate = `${clickedDate.getDate()} ${getMonthName(clickedDate.getMonth())}  ${clickedDate.getFullYear()}`;
-
+  const formattedDate = `${clickedDate.getDate()} ${getMonthName(
+    clickedDate.getMonth()
+  )}  ${clickedDate.getFullYear()}`;
 
   $("#footer-date").text(formattedDate);
   // Очищаем блок с мероприятиями
@@ -247,17 +260,19 @@ $('.cview--date').click(function() {
 
   // Получаем данные о мероприятиях
   getData("events", "", "admin").then((response) => {
-      const currentDate = new Date();
+    const currentDate = new Date();
 
-      response.forEach(function (element) {
-          const elementDate = new Date(element.date);
-          const dateObj = new Date(element.date);
-          const formattedDate = `${addLeadingZero(dateObj.getDate())}.${addLeadingZero(dateObj.getMonth() + 1)}.${dateObj.getFullYear()}`;
-          currentDate.setHours(0, 0, 0, 0);
-          elementDate.setHours(0, 0, 0, 0);
+    response.forEach(function (element) {
+      const elementDate = new Date(element.date);
+      const dateObj = new Date(element.date);
+      const formattedDate = `${addLeadingZero(
+        dateObj.getDate()
+      )}.${addLeadingZero(dateObj.getMonth() + 1)}.${dateObj.getFullYear()}`;
+      currentDate.setHours(0, 0, 0, 0);
+      elementDate.setHours(0, 0, 0, 0);
 
-          if (elementDate.getTime() === clickedDate.getTime()) {
-              let block = `
+      if (elementDate.getTime() === clickedDate.getTime()) {
+        let block = `
                   <div class="todayEvent">
                       <div class="todayTime">
                           ${formattedDate}
@@ -267,17 +282,13 @@ $('.cview--date').click(function() {
                       </div>
                   </div>
               `;
-              $("#todayEvents").append(block);
-          }
-      });
+        $("#todayEvents").append(block);
+      }
+    });
   });
 });
 
 // Тестовая функция отображения мероприятий по дням
-
-
-
-
 
 //Редактирование мероприятия
 const url_event = new URL(window.location.href);
@@ -306,3 +317,104 @@ if (id_event) {
 }
 
 // Конец мероприятия -------------------------------------------------
+
+// Фотогалерея --------------------
+getData("photos", "", "admin").then((response) => {
+  for (let j = 0; j < response.length; j++) {
+    for (let i = 0; i < response[j].img.length; i++) {
+      $("#photos_main").append(`
+
+        <a href="admin/img/${response[j].img[i]}" data-lightbox="index">
+          <img src="admin/img/${response[j].img[i]}" alt="" srcset="">
+        </a>
+
+    `);
+    }
+  }
+  // $("#news_find_new .new_block__text").html(
+  //     JSON.parse(response.text).content
+  // );
+});
+
+// Фотогалерея --------------------
+
+// Проподаватели --------------------
+
+getData("teachers", "", "admin").then((response) => {
+  $("#teachers_main").empty();
+
+  response.forEach(function (element, index) {
+
+    const classOptions = ["blue", "green", "red", "yellow"];
+    const secondClass = classOptions[index % classOptions.length];
+
+    let block = `
+
+        <div class="teacher">
+          <div class="teacher_img">
+              <img src="admin/img/${element.img[0]}" alt="" srcset="">
+          </div>
+          <div class="teacherName">
+              ${element.title}
+          </div>
+          <div class="teacherSpecial ${secondClass}">
+              ${element.description}
+          </div>
+          <div class="teacherDescription">
+              ${JSON.parse(element.text).content}
+          </div>
+        </div>
+       
+        `;
+
+    $("#teachers_main").append(block);
+  });
+});
+
+// Проподаватели --------------------
+
+getData("teachers", "", "admin").then((response) => {
+
+  response.forEach(function (element, index) {
+
+    const classOptions = ["blue", "green", "red", "yellow"];
+    const secondClass = classOptions[index % classOptions.length];
+
+    if (element.description == "Графический дизайн") {
+
+      $("#this_lesson_teacher").empty();
+
+      $("#this_lesson_teacher").append(`
+        <div class="teacher_img">
+          <img src="admin/img/${element.img[0]}" alt="" srcset="">
+        </div>
+        <div class="teacherName">
+          ${element.title}
+        </div>
+        <div class="teacherSpecial ${secondClass}">
+          ${element.description}
+        </div>
+        <div class="teacherDescription">
+          ${JSON.parse(element.text).content}
+        </div>
+     `);
+    }
+  });
+});
+
+getData("works", "", "admin").then((response) => {
+  for (let j = 0; j < response.length; j++) {
+    for (let i = 0; i < response[j].img.length; i++) {
+      $("#lesson_works").append(`
+
+        <a href="admin/img/${response[j].img[i]}" data-lightbox="index">
+          <img src="admin/img/${response[j].img[i]}" alt="" srcset="">
+        </a>
+
+    `);
+    }
+  }
+  // $("#news_find_new .new_block__text").html(
+  //     JSON.parse(response.text).content
+  // );
+});
