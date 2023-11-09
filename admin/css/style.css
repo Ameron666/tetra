@@ -408,7 +408,8 @@ input[type="file"] {
     margin-top: 10px;
 }
 
-.tags_admin__block{
+.tags_admin__block,
+.popular_admin__block{
     border: 2px solid var(--active-item);
     padding: 10px 15px;
     border-radius: 20px;
@@ -419,7 +420,8 @@ input[type="file"] {
     cursor: pointer;
 }
 
-.tags_admin__block:hover{
+.tags_admin__block:hover,
+.popular_admin__block:hover{
     color: #fff;
     background-color: var(--active-item);
 }
@@ -430,5 +432,14 @@ input[type="file"] {
 }
 
 .dn_for_tags{
+    display: none;
+}
+
+.changeBlock_tags,
+.changeBlock_popular{
+    display: none;
+}
+
+.data_admin__elementsWrite{
     display: none;
 }

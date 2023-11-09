@@ -347,6 +347,9 @@ export function makeData(idBlock) {
                   if (subItem == "tags") {
                     $(".tags_admin__block").removeClass('active_tags_admin__block');
                   }
+                  if (subItem == "popular") {
+                    $(".popular_admin__block").removeClass('active_tags_admin__block');
+                  }
                   if (data[category][subItem].element == "input") {
                     $(`#${category}_${subItem}`).val("");
                     allMass = [];
@@ -506,17 +509,63 @@ export function makeData(idBlock) {
                       $('.admin_info__changeElem___data').on('click', '.tags_admin__block', function () {
                         let thisData = $(this).attr('data_tag');
 
-                        if (allMass.includes(thisData)) {
-                          $(this).removeClass('active_tags_admin__block');
-                          var index = allMass.indexOf(thisData);
-                          if (index !== -1) {
-                            allMass.splice(index, 1);
-                          }
-                          $(`.changeBlock_tags`).val(allMass.join(", "));
-                        } else {
+                        if (data[category].tags.selectOne == true) {
+                          $('.tags_admin__block').removeClass('active_tags_admin__block');
                           $(this).addClass('active_tags_admin__block');
-                          allMass.push(thisData);
-                          $(`.changeBlock_tags`).val(allMass.join(", "));
+
+                          $(`.changeBlock_${subItem}`).val($(this).attr('data_tag'));
+                        }
+
+                        if (data[category].tags.selectOne == false) {
+                          if (allMass.includes(thisData)) {
+                            $(this).removeClass('active_tags_admin__block');
+                            var index = allMass.indexOf(thisData);
+                            if (index !== -1) {
+                              allMass.splice(index, 1);
+                            }
+                            $(`.changeBlock_tags`).val(allMass.join(", "));
+                          } else {
+                            $(this).addClass('active_tags_admin__block');
+                            allMass.push(thisData);
+                            $(`.changeBlock_tags`).val(allMass.join(", "));
+                          }
+                        }
+                      });
+                    } else 
+                    if (subItem == 'popular') {
+                      let str = "";
+
+                      let str_data = response[subItem].split(', ');
+
+                      data[category][subItem].data.forEach(element => {
+                        if (str_data.includes(element)) {
+                          str += `<div class="popular_admin__block active_tags_admin__block" data_tag="${element}">${element}</div>`
+                        } else {
+                          str += `<div class="popular_admin__block" data_tag="${element}">${element}</div>`
+                        }
+                      });
+
+                      $(".admin_info__changeElem___data").append(`
+                          <div class="admin_info__changeElem___data____header">${data[category][subItem].name}</div>
+                          <div class="tags_admin">
+                            ${str}
+                          </div>
+                          <input 
+                            type="${data[category][subItem].type}" 
+                            class="admin_info__changeElem___data____title changeBlock_${subItem}" 
+                            value="${response[subItem]}" />
+                      `);
+
+                      let allMass = [];
+
+                      allMass = str_data;
+
+                      $('.admin_info__changeElem___data').on('click', '.popular_admin__block', function () {
+                        if (data[category].tags.selectOne == true) {
+                          $('.popular_admin__block').removeClass('active_tags_admin__block');
+                          $(this).addClass('active_tags_admin__block');
+
+                          $(`.changeBlock_${subItem}`).val($(this).attr('data_tag'));
                         }
                       });
                     } else {
@@ -557,13 +606,13 @@ export function makeData(idBlock) {
         }
 
 
-        $('.changeBlock_block_1').on('change', function(){
+        $('.changeBlock_block_1').on('change', function () {
           let data1 = $(this).val();
           let data2 = $('.changeBlock_block_2').val();
           $('.changeBlock_block_3').val(+data1 + +data2);
         });
-  
-        $('.changeBlock_block_2').on('change', function(){
+
+        $('.changeBlock_block_2').on('change', function () {
           let data1 = $(this).val();
           let data2 = $('changeBlock_block_1').val();
           $('.changeBlock_block_3').val(+data1 + +data2);
@@ -869,25 +918,63 @@ export function createMenuTabs(schema) {
               type="${data[category][subItem].type}" 
               multiple 
               id="${category}_${subItem}" 
-              class="" 
+              class="data_admin__elementsWrite" 
             />
           `)
 
-
-          $('.admin_info__item___form').on('click', '.tags_admin__block', function () {
+          let allMassServ = [];
+          $(`.${category}_show_block .admin_info__item___form`).on('click', `.tags_admin__block`, function () {
             let thisData = $(this).attr('data_tag');
 
-            if (allMass.includes(thisData)) {
-              $(this).removeClass('active_tags_admin__block');
-              var index = allMass.indexOf(thisData);
-              if (index !== -1) {
-                allMass.splice(index, 1);
-              }
-              $(`#${category}_${subItem}`).val(allMass.join(", "));
-            } else {
+            if (data[category].tags.selectOne == true) {
+              $('.tags_admin__block').removeClass('active_tags_admin__block');
               $(this).addClass('active_tags_admin__block');
-              allMass.push(thisData);
-              $(`#${category}_${subItem}`).val(allMass.join(", "));
+
+              $(`#${category}_${subItem}`).val($(this).attr('data_tag'));
+            }
+
+            if (data[category].tags.selectOne == false) {
+              if (allMassServ.includes(thisData)) {
+                $(this).removeClass('active_tags_admin__block');
+                var index = allMassServ.indexOf(thisData);
+                if (index !== -1) {
+                  allMassServ.splice(index, 1);
+                }
+                $(`#${category}_${subItem}`).val(allMassServ.join(", "));
+              } else {
+                $(this).addClass('active_tags_admin__block');
+                allMassServ.push(thisData);
+                $(`#${category}_${subItem}`).val(allMassServ.join(", "));
+              }
+            }
+          });
+        } else if (subItem == "popular") {
+          let str = "";
+
+          data[category][subItem].data.forEach(element => {
+            str += `<div class="popular_admin__block" data_tag="${element}">${element}</div>`
+          });
+
+          $(`.admin_info__elem[data_info="${category}"] .admin_info__item___form`).append(`
+            <label>${data[category][subItem].name}</label>
+            <div class="tags_admin">
+              ${str}
+            </div>
+            <${data[category][subItem].element} 
+              type="${data[category][subItem].type}" 
+              multiple 
+              id="${category}_${subItem}" 
+              class="data_admin__elementsWrite" 
+            />
+          `)
+
+          let allMassServ = [];
+          $(`.${category}_show_block .admin_info__item___form`).on('click', `.popular_admin__block`, function () {
+            if (data[category].tags.selectOne == true) {
+              $('.popular_admin__block').removeClass('active_tags_admin__block');
+              $(this).addClass('active_tags_admin__block');
+
+              $(`#${category}_${subItem}`).val($(this).attr('data_tag'));
             }
           });
         } else {
@@ -899,13 +986,13 @@ export function createMenuTabs(schema) {
       }
 
 
-      $('#map_block_1').on('change', function(){
+      $('#map_block_1').on('change', function () {
         let data1 = $(this).val();
         let data2 = $('#map_block_2').val();
         $('#map_block_3').val(+data1 + +data2);
       });
 
-      $('#map_block_2').on('change', function(){
+      $('#map_block_2').on('change', function () {
         let data1 = $(this).val();
         let data2 = $('#map_block_1').val();
         $('#map_block_3').val(+data1 + +data2);

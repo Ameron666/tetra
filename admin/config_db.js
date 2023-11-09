@@ -58,12 +58,23 @@ export function schema() {
 
     works: {
       menuName: "Работы студентов",
-      title: {
-        name: "Преподаватель",
+      tags: {
+        name: "Предмет",
         element: "input",
         type: "text",
+        data: [
+          "Искусственный интеллект",
+          "Графический дизайн",
+          "Робототехника",
+          "ЧПУ программирование",
+          "Векторная графика",
+          "Информатика",
+          "Основы электроники",
+        ],
+        selectOne: true,
         required: true,
       },
+
       img: {
         name: "Изображения/фотографии",
         element: "input",
@@ -90,10 +101,20 @@ export function schema() {
         type: "text",
         required: true,
       },
-      description: {
+      tags: {
         name: "Предмет",
         element: "input",
         type: "text",
+        data: [
+          "Искусственный интеллект",
+          "Графический дизайн",
+          "Робототехника",
+          "ЧПУ программирование",
+          "Векторная графика",
+          "Информатика",
+          "Основы электроники",
+        ],
+        selectOne: true,
         required: true,
       },
       img: {
@@ -106,6 +127,44 @@ export function schema() {
         name: "Описание",
         element: "textarea",
         type: "text",
+        required: true,
+      },
+    },
+
+    lessons: {
+      menuName: "Предметы",
+      title: {
+        name: "Название предмета",
+        element: "input",
+        type: "text",
+        required: true,
+      },
+      tags: {
+        name: "Предмет",
+        element: "input",
+        type: "text",
+        data: [
+          "Искусственный интеллект",
+          "Графический дизайн",
+          "Робототехника",
+          "ЧПУ программирование",
+          "Векторная графика",
+          "Информатика",
+          "Основы электроники",
+        ],
+        selectOne: true,
+        required: true,
+      },
+      text: {
+        name: "Описание",
+        element: "textarea",
+        type: "text",
+        required: true,
+      },
+      img: {
+        name: "Фотография",
+        element: "input",
+        type: "file",
         required: true,
       },
     },

@@ -66,7 +66,7 @@ getData("news", "", "admin").then((response) => {
   });
 });
 
-//Редактирование новости
+//Новость --------------------------------------------------------
 const url_new = new URL(window.location.href);
 const queryParams_new = url_new.searchParams;
 const id_new = queryParams_new.get("id_new");
@@ -84,12 +84,12 @@ if (id_new) {
                 </div>
             `);
     }
-
-    // $("#news_find_new .new_block__text").html(
-    //     JSON.parse(response.text).content
-    // );
   });
 }
+
+// $("#news_find_new .new_block__text").html(
+//     JSON.parse(response.text).content
+// );
 
 // //Выгрузка новостей на главную
 getData("news", "", "admin").then((response) => {
@@ -318,6 +318,77 @@ if (id_event) {
 
 // Конец мероприятия -------------------------------------------------
 
+// Предметы  --------------------------------
+
+getData("lessons", "", "admin").then((response) => {
+  let lessons = document.querySelectorAll(".tetra_svg");
+  response.forEach((element) => {
+    lessons.forEach((lesson) => {
+      if (element.tags == lesson.getAttribute("svg_num")) {
+        lesson.setAttribute("lesson_id", element.id);
+        lesson.setAttribute("id", element.id);
+        
+        
+        
+        // (".lessonContent").empty();
+        
+        
+        let block = $(`#${element.id}`).children(".lessonContent").empty();
+
+
+
+        block.append(`
+          <div class="lessonAge">
+            Для детей от 15 лет
+          </div>
+          <div class="lessonDescription">
+            ${(JSON.parse(element.text).content)}
+          </div>
+          <div class="lesson_button">
+            <a href="/lesson.html?id_lesson=${element.id}">
+              <div class="button_grey">Узнать больше</div>
+            </a>
+          </div>
+           
+        `)
+      }
+    });
+  });
+});
+
+const url_lesson = new URL(window.location.href);
+const queryParams_lesson = url_lesson.searchParams;
+const id_lesson = queryParams_lesson.get("id_lesson");
+
+if (id_lesson) {
+  getData("lessons", id_lesson, "admin").then((response) => {
+    $(".thisLesson").attr("lesson_name", response.tags);
+    $(".thisLessonTitle").text(response.title);
+    $(".thisLessonDescription").html(JSON.parse(response.text).content);
+  });
+}
+
+$(".tetra_svg_div").on("click", (e) => {
+  if (e.target.closest(".tetra_svg")) {
+    let lesson = e.target.closest(".tetra_svg").getAttribute("lesson_id");
+    // <a href="/new.html?id_new=${response[i].id}"></a>
+
+    window.location.href = `/lesson.html?id_lesson=${lesson}`;
+  }
+});
+
+$(".tetra_svg_div").on("mousedown", (e) => {
+  if (e.which === 2) {
+    if (e.target.closest(".tetra_svg")) {
+      let lesson = e.target.closest(".tetra_svg").getAttribute("lesson_id");
+
+      window.open(`/lesson.html?id_lesson=${lesson}`);
+    }
+  }
+});
+
+// ^ Предметы ^ --------------------------------
+
 // Фотогалерея --------------------
 getData("photos", "", "admin").then((response) => {
   for (let j = 0; j < response.length; j++) {
@@ -344,7 +415,6 @@ getData("teachers", "", "admin").then((response) => {
   $("#teachers_main").empty();
 
   response.forEach(function (element, index) {
-
     const classOptions = ["blue", "green", "red", "yellow"];
     const secondClass = classOptions[index % classOptions.length];
 
@@ -358,7 +428,7 @@ getData("teachers", "", "admin").then((response) => {
               ${element.title}
           </div>
           <div class="teacherSpecial ${secondClass}">
-              ${element.description}
+              ${element.tags}
           </div>
           <div class="teacherDescription">
               ${JSON.parse(element.text).content}
@@ -371,17 +441,12 @@ getData("teachers", "", "admin").then((response) => {
   });
 });
 
-// Проподаватели --------------------
-
 getData("teachers", "", "admin").then((response) => {
-
   response.forEach(function (element, index) {
-
     const classOptions = ["blue", "green", "red", "yellow"];
     const secondClass = classOptions[index % classOptions.length];
 
-    if (element.description == "Графический дизайн") {
-
+    if (element.tags == $(".thisLesson").attr("lesson_name")) {
       $("#this_lesson_teacher").empty();
 
       $("#this_lesson_teacher").append(`
@@ -392,7 +457,7 @@ getData("teachers", "", "admin").then((response) => {
           ${element.title}
         </div>
         <div class="teacherSpecial ${secondClass}">
-          ${element.description}
+          ${element.tags}
         </div>
         <div class="teacherDescription">
           ${JSON.parse(element.text).content}
@@ -402,16 +467,20 @@ getData("teachers", "", "admin").then((response) => {
   });
 });
 
+// ^ Проподаватели ^ ------------------
+
 getData("works", "", "admin").then((response) => {
   for (let j = 0; j < response.length; j++) {
-    for (let i = 0; i < response[j].img.length; i++) {
-      $("#lesson_works").append(`
+    if (response[j].tags == $(".thisLesson").attr("lesson_name")) {
+      for (let i = 0; i < response[j].img.length; i++) {
+        $("#lesson_works").append(`
+        
+          <a href="admin/img/${response[j].img[i]}" data-lightbox="index">
+            <img src="admin/img/${response[j].img[i]}" alt="" srcset="">
+          </a>
 
-        <a href="admin/img/${response[j].img[i]}" data-lightbox="index">
-          <img src="admin/img/${response[j].img[i]}" alt="" srcset="">
-        </a>
-
-    `);
+        `);
+      }
     }
   }
   // $("#news_find_new .new_block__text").html(

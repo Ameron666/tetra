@@ -1114,6 +1114,10 @@ footer {
   /* Don't touch */
 }
 
+.lessonTitleHeight {
+  height: 200px;
+}
+
 .lesson_img {
   overflow: hidden;
   display: flex;
@@ -1136,6 +1140,34 @@ footer {
 }
 
 .lessonDescription {
+  height: 120px;
+}
+.lessonDescription p{
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -ms-line-clamp: 4;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  display: -webkit-box;
+  display: box;
+  word-wrap: break-word;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+}
+
+.lessonDescription::-webkit-scrollbar {
+  width: 4px;
+}
+
+.lessonDescription::-webkit-scrollbar-track {
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+  background-color: var(--color-background);
+}
+
+.lessonDescription::-webkit-scrollbar-thumb {
+  background-color: var(--color-red-transparent6);
 }
 
 /* Lessons  */

@@ -7,21 +7,21 @@ $(window).load(function () {
 
 // _____________________
 // const svg = $(".tetra_svg")
-$(".tetra_svg_div").on("click", (e) => {
-  if (e.target.closest(".tetra_svg")) {
-    let lesson = e.target.closest(".tetra_svg").getAttribute("svg_num");
-    window.location.href =  lesson + ".html";
-  }
-});
+// $(".tetra_svg_div").on("click", (e) => {
+//   if (e.target.closest(".tetra_svg")) {
+//     let lesson = e.target.closest(".tetra_svg").getAttribute("svg_num");
+//     window.location.href =  lesson + ".html";
+//   }
+// });
 
-$(".tetra_svg_div").on("mousedown", (e) => {
-  if (e.which === 2) { // Проверяем, что нажата средняя кнопка мыши 
-    if (e.target.closest(".tetra_svg")) {
-      let lesson = e.target.closest(".tetra_svg").getAttribute("svg_num");
-      window.open( lesson + ".html", '_blank');
-    }
-  }
-});
+// $(".tetra_svg_div").on("mousedown", (e) => {
+//   if (e.which === 2) { // Проверяем, что нажата средняя кнопка мыши 
+//     if (e.target.closest(".tetra_svg")) {
+//       let lesson = e.target.closest(".tetra_svg").getAttribute("svg_num");
+//       window.open( lesson + ".html", '_blank');
+//     }
+//   }
+// });
 
 const selectedItem = document.getElementById("selectedItem");
 
