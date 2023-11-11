@@ -168,5 +168,27 @@ export function schema() {
         required: true,
       },
     },
+
+    creativity: {
+      menuName: "Творчество",
+      title: {
+        name : "Title", 
+        element: "input",
+        type: "text",
+        required: true,
+      },
+      text: {
+        name: "Описание",
+        element: "textarea",
+        type: "text",
+        required: true,
+      },
+      img: {
+        name: "Изображения",
+        element: "input",
+        type: "file",
+        required: true,
+      }
+    }
   };
 }

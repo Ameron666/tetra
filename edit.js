@@ -242,7 +242,13 @@ getData("events", "", "admin").then((response) => {
 
 // Тестовая функция отображения мероприятий по дням
 
-$(".cview--date").click(function () {
+// $(".cview--date").click(
+  
+  
+// $(".cview--date").click
+
+
+$(".cview--date").click(function() {
   const clickedDateStr = $(this).data("date"); // Получаем выбранную дату из атрибута 'data-date'
 
   // Преобразуем строку даты в объект Date
@@ -288,6 +294,7 @@ $(".cview--date").click(function () {
   });
 });
 
+
 // Тестовая функция отображения мероприятий по дням
 
 //Редактирование мероприятия
@@ -327,22 +334,17 @@ getData("lessons", "", "admin").then((response) => {
       if (element.tags == lesson.getAttribute("svg_num")) {
         lesson.setAttribute("lesson_id", element.id);
         lesson.setAttribute("id", element.id);
-        
-        
-        
+
         // (".lessonContent").empty();
-        
-        
+
         let block = $(`#${element.id}`).children(".lessonContent").empty();
-
-
 
         block.append(`
           <div class="lessonAge">
             Для детей от 15 лет
           </div>
           <div class="lessonDescription">
-            ${(JSON.parse(element.text).content)}
+            ${JSON.parse(element.text).content}
           </div>
           <div class="lesson_button">
             <a href="/lesson.html?id_lesson=${element.id}">
@@ -350,7 +352,7 @@ getData("lessons", "", "admin").then((response) => {
             </a>
           </div>
            
-        `)
+        `);
       }
     });
   });
@@ -486,4 +488,32 @@ getData("works", "", "admin").then((response) => {
   // $("#news_find_new .new_block__text").html(
   //     JSON.parse(response.text).content
   // );
+});
+
+getData("creativity", "", "admin").then((response) => {
+  // $("#creativity").empty();
+
+  response.forEach(function (element) {
+
+  let block = `
+            
+  <div class="mySlides fade">
+    <div class="creativityBlock">
+      <div class="creativity_img">
+          <img src="admin/img/${element.img}" alt="">
+      </div>
+
+      <div class="creativityText">
+        <div class="creativityTitle title32">${element.title}</div>
+        <div class="creativityTitle title24"></div>
+        <div class="creativityContent">
+          ${JSON.parse(element.text).content}
+        </div>
+      </div>
+    </div>
+  </div>
+        `;
+
+  $("#creativity").append(block);
+  });
 });

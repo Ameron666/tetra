@@ -972,6 +972,8 @@ footer {
 .todayContent {
   width: 385px;
   height: 80px;
+  line-height: normal;
+  font-size: 15px;
 }
 
 .calendar {

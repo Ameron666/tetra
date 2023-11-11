@@ -169,7 +169,7 @@ function CalendarApp(date) {
     }
   
     // build up spacers
-    for (var x = 0; x < startingD; x++) {
+    for (var x = 1; x < startingD; x++) {
       var spacer = document.createElement("div");
       spacer.className = "cview--spacer";
       this.calendarView.appendChild(spacer);
@@ -181,7 +181,11 @@ function CalendarApp(date) {
       day.className = "cview--date";
       day.textContent = z;
       day.setAttribute("data-date", _date);
-      day.onclick = this.showDay.bind(this);
+
+
+
+      // day.onclick = this.showDay.bind(this);
+      // $(".cview--date").click(eventsGet())
   
       // check if todays date
       if (
