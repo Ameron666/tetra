@@ -181,8 +181,9 @@ function CalendarApp(date) {
       day.className = "cview--date";
       day.textContent = z;
       day.setAttribute("data-date", _date);
+      day.onclick = (window.eventsGet);
 
-      $(".cview--date").click(window.eventsGet);
+      // $(".cview--date").click(window.eventsGet);
 
       // day.onclick = this.showDay.bind(this);
       // $(".cview--date").click(eventsGet())
