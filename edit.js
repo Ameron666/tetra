@@ -248,7 +248,10 @@ getData("events", "", "admin").then((response) => {
 // $(".cview--date").click
 
 
-$(".cview--date").click(function() {
+// $(".cview--date").click(function() {
+
+
+  window.eventsGet = function() {
   const clickedDateStr = $(this).data("date"); // Получаем выбранную дату из атрибута 'data-date'
 
   // Преобразуем строку даты в объект Date
@@ -292,7 +295,11 @@ $(".cview--date").click(function() {
       }
     });
   });
-});
+// });
+};
+
+
+$(".cview--date").click(window.eventsGet);  
 
 
 // Тестовая функция отображения мероприятий по дням

@@ -182,7 +182,7 @@ function CalendarApp(date) {
       day.textContent = z;
       day.setAttribute("data-date", _date);
 
-
+      $(".cview--date").click(window.eventsGet);
 
       // day.onclick = this.showDay.bind(this);
       // $(".cview--date").click(eventsGet())
