@@ -226,9 +226,11 @@ getData("events", "", "admin").then((response) => {
             <div class="todayTime">
               ${formattedDate}
             </div>
-            <div class="todayContent">
-              ${element.title}
-            </div>
+            <a href="event.html?id_event=${element.id}">
+              <div class="todayContent">
+                ${element.title}
+              </div>
+            </a>
           </div>
         `;
 
@@ -283,9 +285,11 @@ window.eventsGet = function () {
                       <div class="todayTime">
                           ${formattedDate}
                       </div>
-                      <div class="todayContent">
+                      <a href="event.html?id_event=${element.id}">
+                        <div class="todayContent">
                           ${element.title}
-                      </div>
+                        </div>
+                      </a>
                   </div>
               `;
         $("#todayEvents").append(block);

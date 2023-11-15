@@ -997,8 +997,9 @@ footer {
 
 .thisEventHead {
   display: flex;
-  gap: 80px;
+  gap: 40px;
   background: var(--color-background-footer);
+  width: var(--width-block);
 }
 
 .thisEventHeadBlock {
@@ -1015,7 +1016,8 @@ footer {
   justify-content: center;
   align-items: center;
   background-color: var(--color-grey-light);
-  width: 800px;
+  /* width: 800px; */
+  width: 50%;
   height: 560px;
 }
 
@@ -1024,7 +1026,8 @@ footer {
 }
 
 .thisEventTitle {
-  width: 800px;
+  /* width: 800px; */
+  width: 50%px;
   height: 200px;
 }
 
@@ -1037,11 +1040,13 @@ footer {
 
 .thisEventGalery {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: row;
+  /* justify-content: center; */
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 20px;
   width: 50%;
+  height: 100%;
 }
 
 .thisEventGalery a {
@@ -1072,6 +1077,10 @@ footer {
   width: 100%;
 }
 
+.thisEventContent p {
+  margin: 0;
+}
+
 .arrow_up,
 .arrow_down {
   cursor: pointer;
@@ -1088,7 +1097,7 @@ footer {
 }
 
 .lessonsBlock {
-  padding: 80px 0;
+  padding: 40px 0;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
