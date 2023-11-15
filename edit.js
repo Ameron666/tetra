@@ -243,15 +243,12 @@ getData("events", "", "admin").then((response) => {
 // Тестовая функция отображения мероприятий по дням
 
 // $(".cview--date").click(
-  
-  
-// $(".cview--date").click
 
+// $(".cview--date").click
 
 // $(".cview--date").click(function() {
 
-
-  window.eventsGet = function() {
+window.eventsGet = function () {
   const clickedDateStr = $(this).data("date"); // Получаем выбранную дату из атрибута 'data-date'
 
   // Преобразуем строку даты в объект Date
@@ -292,15 +289,17 @@ getData("events", "", "admin").then((response) => {
                   </div>
               `;
         $("#todayEvents").append(block);
+        $(".today_img").empty();
+        $(".today_img").append(`
+          <img src="admin/img/${element.img[0]}" alt="">
+      `);
       }
     });
   });
-// });
+  // });
 };
 
-
-$(".cview--date").click(window.eventsGet);  
-
+$(".cview--date").click(window.eventsGet);
 
 // Тестовая функция отображения мероприятий по дням
 
@@ -365,6 +364,21 @@ getData("lessons", "", "admin").then((response) => {
   });
 });
 
+getData("lessons", "", "admin").then((response) => {
+  // $(".tetraHardAdapBlock").empty();
+  response.forEach((element) => {
+
+    $(".tetraHardAdapBlock").append(`
+      <a href="/lesson.html?id_lesson=${element.id}">
+        <div class="tetraHardAdap">
+          <span class="tetra_span"> ${element.title} </span>
+        </div>
+      </a>
+    `)
+
+  })
+})
+
 const url_lesson = new URL(window.location.href);
 const queryParams_lesson = url_lesson.searchParams;
 const id_lesson = queryParams_lesson.get("id_lesson");
@@ -401,7 +415,8 @@ $(".tetra_svg_div").on("mousedown", (e) => {
 // Фотогалерея --------------------
 getData("photos", "", "admin").then((response) => {
   for (let j = 0; j < response.length; j++) {
-    for (let i = 0; i < response[j].img.length; i++) {
+    // for (let i = 0; i < response[j].img.length; i++) {
+    for (let i = 0; i < 8; i++) {
       $("#photos_main").append(`
 
         <a href="admin/img/${response[j].img[i]}" data-lightbox="index">
@@ -501,8 +516,7 @@ getData("creativity", "", "admin").then((response) => {
   // $("#creativity").empty();
 
   response.forEach(function (element) {
-
-  let block = `
+    let block = `
             
   <div class="mySlides fade">
     <div class="creativityBlock">
@@ -521,6 +535,6 @@ getData("creativity", "", "admin").then((response) => {
   </div>
         `;
 
-  $("#creativity").append(block);
+    $("#creativity").append(block);
   });
 });

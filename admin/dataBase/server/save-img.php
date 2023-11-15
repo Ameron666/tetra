@@ -7,12 +7,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['file'])) {
         $originalFileName = $_FILES['file']['name'][$key]; // Исходное имя файла
         $fileExtension = pathinfo($originalFileName, PATHINFO_EXTENSION); // Извлечение расширения
 
-        $fileRandomName = basename(uniqid('', true) . '.' . $fileExtension);
+        $fileRandomName = basename(uniqid('', true) . '.webp'); // Устанавливаем расширение webp
         $uploadedFile = $uploadDir . $fileRandomName;
 
-        if (move_uploaded_file($_FILES['file']['tmp_name'][$key], $uploadedFile)) {
-            $fileNames[] = $fileRandomName;
+        // Проверяем тип файла
+        if ($fileExtension === 'jpg' || $fileExtension === 'jpeg' || $fileExtension === 'png') {
+            // Создаем изображение из файла
+            if ($fileExtension === 'jpg' || $fileExtension === 'jpeg') {
+                $image = imagecreatefromjpeg($tmp_name);
+            } elseif ($fileExtension === 'png') {
+                $image = imagecreatefrompng($tmp_name);
+            }
+
+            // Сохраняем изображение в формате WebP
+            imagewebp($image, $uploadedFile, 85);
+
+            // Освобождаем память
+            imagedestroy($image);
+        } elseif ($fileExtension === 'webp') {
+            // Если изображение уже в формате WebP, просто копируем его
+            copy($tmp_name, $uploadedFile);
         }
+
+        // Добавляем имя файла в массив
+        $fileNames[] = $fileRandomName;
     }
 
     if (!empty($fileNames)) {
