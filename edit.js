@@ -337,82 +337,79 @@ if (id_event) {
 
 // Предметы  --------------------------------
 
-getData("lessons", "", "admin").then((response) => {
-  let lessons = document.querySelectorAll(".tetra_svg");
-  response.forEach((element) => {
-    lessons.forEach((lesson) => {
-      if (element.tags == lesson.getAttribute("svg_num")) {
-        lesson.setAttribute("lesson_id", element.id);
-        lesson.setAttribute("id", element.id);
+// getData("lessons", "", "admin").then((response) => {
+//   let lessons = document.querySelectorAll(".tetra_svg");
+//   response.forEach((element) => {
+//     lessons.forEach((lesson) => {
+//       if (element.tags == lesson.getAttribute("svg_num")) {
+//         lesson.setAttribute("lesson_id", element.id);
+//         lesson.setAttribute("id", element.id);
 
-        // (".lessonContent").empty();
 
-        let block = $(`#${element.id}`).children(".lessonContent").empty();
+//         let block = $(`#${element.id}`).children(".lessonContent").empty();
 
-        block.append(`
-          <div class="lessonAge">
-            Для детей от 15 лет
-          </div>
-          <div class="lessonDescription">
-            ${JSON.parse(element.text).content}
-          </div>
-          <div class="lesson_button">
-            <a href="/lesson.html?id_lesson=${element.id}">
-              <div class="button_grey">Узнать больше</div>
-            </a>
-          </div>
+//         block.append(`
+//           <div class="lessonAge">
+//             Для детей от 15 лет
+//           </div>
+//           <div class="lessonDescription">
+//             ${JSON.parse(element.text).content}
+//           </div>
+//           <div class="lesson_button">
+//             <a href="/lesson.html?id_lesson=${element.id}">
+//               <div class="button_grey">Узнать больше</div>
+//             </a>
+//           </div>
            
-        `);
-      }
-    });
-  });
-});
+//         `);
+//       }
+//     });
+//   });
+// });
 
-getData("lessons", "", "admin").then((response) => {
-  // $(".tetraHardAdapBlock").empty();
-  response.forEach((element) => {
+// getData("lessons", "", "admin").then((response) => {
+//   response.forEach((element) => {
 
-    $(".tetraHardAdapBlock").append(`
-      <a href="/lesson.html?id_lesson=${element.id}">
-        <div class="tetraHardAdap">
-          <span class="tetra_span"> ${element.title} </span>
-        </div>
-      </a>
-    `)
+//     $(".tetraHardAdapBlock").append(`
+//       <a href="/lesson.html?id_lesson=${element.id}">
+//         <div class="tetraHardAdap">
+//           <span class="tetra_span"> ${element.title} </span>
+//         </div>
+//       </a>
+//     `)
 
-  })
-})
+//   })
+// })
 
-const url_lesson = new URL(window.location.href);
-const queryParams_lesson = url_lesson.searchParams;
-const id_lesson = queryParams_lesson.get("id_lesson");
+// const url_lesson = new URL(window.location.href);
+// const queryParams_lesson = url_lesson.searchParams;
+// const id_lesson = queryParams_lesson.get("id_lesson");
 
-if (id_lesson) {
-  getData("lessons", id_lesson, "admin").then((response) => {
-    $(".thisLesson").attr("lesson_name", response.tags);
-    $(".thisLessonTitle").text(response.title);
-    $(".thisLessonDescription").html(JSON.parse(response.text).content);
-  });
-}
+// if (id_lesson) {
+//   getData("lessons", id_lesson, "admin").then((response) => {
+//     $(".thisLesson").attr("lesson_name", response.tags);
+//     $(".thisLessonTitle").text(response.title);
+//     $(".thisLessonDescription").html(JSON.parse(response.text).content);
+//   });
+// }
 
-$(".tetra_svg_div").on("click", (e) => {
-  if (e.target.closest(".tetra_svg")) {
-    let lesson = e.target.closest(".tetra_svg").getAttribute("lesson_id");
-    // <a href="/new.html?id_new=${response[i].id}"></a>
+// $(".tetra_svg_div").on("click", (e) => {
+//   if (e.target.closest(".tetra_svg")) {
+//     let lesson = e.target.closest(".tetra_svg").getAttribute("lesson_id");
 
-    window.location.href = `/lesson.html?id_lesson=${lesson}`;
-  }
-});
+//     window.location.href = `/lesson.html?id_lesson=${lesson}`;
+//   }
+// });
 
-$(".tetra_svg_div").on("mousedown", (e) => {
-  if (e.which === 2) {
-    if (e.target.closest(".tetra_svg")) {
-      let lesson = e.target.closest(".tetra_svg").getAttribute("lesson_id");
+// $(".tetra_svg_div").on("mousedown", (e) => {
+//   if (e.which === 2) {
+//     if (e.target.closest(".tetra_svg")) {
+//       let lesson = e.target.closest(".tetra_svg").getAttribute("lesson_id");
 
-      window.open(`/lesson.html?id_lesson=${lesson}`);
-    }
-  }
-});
+//       window.open(`/lesson.html?id_lesson=${lesson}`);
+//     }
+//   }
+// });
 
 // ^ Предметы ^ --------------------------------
 
