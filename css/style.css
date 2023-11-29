@@ -730,6 +730,10 @@ footer {
   padding-top: 60px;
 }
 
+.photos {
+  /* padding-left: 60px; */
+}
+
 .photos_big_img {
   /* width: var(--width-block); */
   display: flex;

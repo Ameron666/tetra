@@ -1,10 +1,13 @@
 :root {
-  --white: #ffffff;
-  --active-item: #2271B1;
-  --item-hover: #2C3338;
-  --item-main: #1D2327;
-  --item-elements: #cecece;
-  --item-delete: #ff0000;
-
-  --menu-width: 320px;
-}
+    --black: #000000;
+    --white: #ffffff;
+    --active-item: #2271B1;
+    --active-item-hover: #135e96;
+    --item-hover: #2C3338;
+    --item-main: #1D2327;
+    --item-elements: #c3c4c7;
+    --item-delete: #ad0707;
+    --item-message: #26b326;
+    --menu-width: 320px;
+    --background: #f0f0f1;
+  }

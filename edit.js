@@ -1,7 +1,47 @@
-import { getData } from "./admin/library.js";
+// import { getData } from "./admin/library.js";
+function getData(tableName, id) {
+  return new Promise(function (resolve, reject) {
+    $.ajax({
+      url: "admin/includes/CRUD/getDataFromDB.php",
+      type: "POST",
+      data: {
+        id: id,
+        tableName: tableName,
+      },
+      dataType: "json",
+      success: function (data) {
+        // function compareDates(a, b) {
+        //     const dateA = new Date(a.date);
+        //     const dateB = new Date(b.date);
 
+        //     // Сравниваем даты
+        //     if (dateA > dateB) {
+        //         return -1;
+        //     } else if (dateA < dateB) {
+        //         return 1;
+        //     } else {
+        //         return 0;
+        //     }
+        // }
+
+        let dataArray = Object.values(data);
+
+        //resolve(dataArray.sort(compareDates));
+        resolve(dataArray);
+      },
+      error: function (xhr, status, error) {
+        console.error("Error:", xhr, status, error);
+        reject(error);
+      },
+    });
+  });
+}
+
+function stringToImageArray(imageString) {
+  return imageString.split(",").map((image) => image.trim());
+}
 // Для показа текста
-// JSON.parse(element.text).content
+// element.text
 function addLeadingZero(number) {
   return number < 10 ? `0${number}` : number;
 }
@@ -32,7 +72,7 @@ function getMonthName(monthNumber) {
 }
 // Новости -----------------------------------------------------------
 
-getData("news", "", "admin").then((response) => {
+getData("news").then((response) => {
   $("#news_all").empty();
 
   response.forEach(function (element) {
@@ -44,7 +84,7 @@ getData("news", "", "admin").then((response) => {
     let block = `
             <div class="new">
                 <div class="new_img">
-                    <img src="admin/img/${element.img[0]}" alt="" srcset="">
+                    <img src="admin/img/${stringToImageArray(element.img)[0]}" alt="" srcset="">
                 </div>
                 <div class="newDesk">
                     <div class="newDate">
@@ -73,13 +113,13 @@ const id_new = queryParams_new.get("id_new");
 if (id_new) {
   getData("news", id_new, "admin").then((response) => {
     $(".newThisTitle").text(response.title);
-    $(".newContent").html(JSON.parse(response.text).content);
+    $(".newContent").html(response.text);
 
-    for (let i = 0; i < response.img.length; i++) {
+    for (let i = 0; i < stringToImageArray(response[4]).length; i++) {
       $(".newThis_images").append(`
                 <div class="newThis_img">
-                    <a href="admin/img/${response.img[i]}" data-lightbox="new1">
-                        <img src="admin/img/${response.img[i]}" alt="" srcset="">
+                    <a href="admin/img/${stringToImageArray(response[4])[i]}" data-lightbox="new1">
+                        <img src="admin/img/${stringToImageArray(response[4])[i]}" alt="" srcset="">
                     </a>
                 </div>
             `);
@@ -88,11 +128,11 @@ if (id_new) {
 }
 
 // $("#news_find_new .new_block__text").html(
-//     JSON.parse(response.text).content
+//     response.text
 // );
 
 // //Выгрузка новостей на главную
-getData("news", "", "admin").then((response) => {
+getData("news").then((response) => {
   let block = $("#news_main_page").empty();
   const maxCharacters = 100;
 
@@ -111,7 +151,7 @@ getData("news", "", "admin").then((response) => {
     block.append(`
             <div class="new">
                 <div class="new_img">
-                    <img src="admin/img/${response[i].img[0]}" alt="" srcset="">
+                    <img src="admin/img/${stringToImageArray(response[i].img)[0]}" alt="" srcset="">
                 </div>
                 <div class="newDesk">
                     <div class="newDate">
@@ -131,7 +171,7 @@ getData("news", "", "admin").then((response) => {
   }
 });
 // Same news
-getData("news", "", "admin").then((response) => {
+getData("news").then((response) => {
   let block = $("#this_same_news").empty();
   const maxCharacters = 100;
 
@@ -150,7 +190,7 @@ getData("news", "", "admin").then((response) => {
     block.append(`
             <div class="new">
                 <div class="new_img">
-                    <img src="admin/img/${response[i].img[0]}" alt="" srcset="">
+                    <img src="admin/img/${stringToImageArray(response[i].img)[0]}" alt="" srcset="">
                 </div>
                 <div class="newDesk">
                     <div class="newDate">
@@ -174,7 +214,7 @@ getData("news", "", "admin").then((response) => {
 
 // Мероприятия -------------------------------------------------------
 
-getData("events", "", "admin").then((response) => {
+getData("events").then((response) => {
   $("#events_all").empty();
 
   response.forEach(function (element) {
@@ -185,7 +225,7 @@ getData("events", "", "admin").then((response) => {
     let block = `
         <div class="new">
         <div class="new_img">
-            <img src="admin/img/${element.img[0]}" alt="" srcset="">
+            <img src="admin/img/${stringToImageArray(element.img)[0]}" alt="" srcset="">
         </div>
             <div class="newDesk">
 
@@ -208,7 +248,7 @@ getData("events", "", "admin").then((response) => {
 
 // ________________________________________________________________
 
-getData("events", "", "admin").then((response) => {
+getData("events").then((response) => {
   const currentDate = new Date();
 
   $("#todayEvents").empty();
@@ -267,7 +307,7 @@ window.eventsGet = function () {
   $("#todayEvents").empty();
 
   // Получаем данные о мероприятиях
-  getData("events", "", "admin").then((response) => {
+  getData("events").then((response) => {
     const currentDate = new Date();
 
     response.forEach(function (element) {
@@ -295,7 +335,7 @@ window.eventsGet = function () {
         $("#todayEvents").append(block);
         $(".today_img").empty();
         $(".today_img").append(`
-          <img src="admin/img/${element.img[0]}" alt="">
+          <img src="admin/img/${stringToImageArray(element.img)[0]}" alt="">
       `);
       }
     });
@@ -313,22 +353,22 @@ const queryParams_event = url_event.searchParams;
 const id_event = queryParams_event.get("id_event");
 if (id_event) {
   getData("events", id_event, "admin").then((response) => {
-    $(".thisEventTitle").text(response.title);
-    $(".thisEventContent").html(JSON.parse(response.text).content);
+    $(".thisEventTitle").text(response[1]);
+    $(".thisEventContent").html(response[2]);
     $(".thisEvent_img").append(`
-                <img src="admin/img/${response.img[0]}" alt="">
+                <img src="admin/img/${stringToImageArray(response[4])[0]}" alt="">
       `);
 
-    for (let i = 0; i < response.img.length; i++) {
+    for (let i = 0; i < stringToImageArray(response[4]).length; i++) {
       $(".thisEventGalery").append(`
-        <a href="admin/img/${response.img[i]}" data-lightbox="event">
-            <img src="admin/img/${response.img[i]}" alt="" srcset="">
+        <a href="admin/img/${stringToImageArray(response[4])[i]}" data-lightbox="event">
+            <img src="admin/img/${stringToImageArray(response[4])[i]}" alt="" srcset="">
         </a>
      `);
     }
 
     // $("#news_find_new .new_block__text").html(
-    //     JSON.parse(response.text).content
+    //     response.text
     // );
   });
 }
@@ -337,7 +377,7 @@ if (id_event) {
 
 // Предметы  --------------------------------
 
-// getData("lessons", "", "admin").then((response) => {
+// getData("lessons").then((response) => {
 //   let lessons = document.querySelectorAll(".tetra_svg");
 //   response.forEach((element) => {
 //     lessons.forEach((lesson) => {
@@ -353,7 +393,7 @@ if (id_event) {
 //             Для детей от 15 лет
 //           </div>
 //           <div class="lessonDescription">
-//             ${JSON.parse(element.text).content}
+//             ${element.text}
 //           </div>
 //           <div class="lesson_button">
 //             <a href="/lesson.html?id_lesson=${element.id}">
@@ -367,7 +407,7 @@ if (id_event) {
 //   });
 // });
 
-// getData("lessons", "", "admin").then((response) => {
+// getData("lessons").then((response) => {
 //   response.forEach((element) => {
 
 //     $(".tetraHardAdapBlock").append(`
@@ -389,7 +429,7 @@ if (id_event) {
 //   getData("lessons", id_lesson, "admin").then((response) => {
 //     $(".thisLesson").attr("lesson_name", response.tags);
 //     $(".thisLessonTitle").text(response.title);
-//     $(".thisLessonDescription").html(JSON.parse(response.text).content);
+//     $(".thisLessonDescription").html(response.text);
 //   });
 // }
 
@@ -414,21 +454,21 @@ if (id_event) {
 // ^ Предметы ^ --------------------------------
 
 // Фотогалерея --------------------
-getData("photos", "", "admin").then((response) => {
+getData("photos").then((response) => {
   for (let j = 0; j < response.length; j++) {
-    // for (let i = 0; i < response[j].img.length; i++) {
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < stringToImageArray(response[j].img).length; i++) {
+    // for (let i = 0; i < 8; i++) {
       $("#photos_main").append(`
 
-        <a href="admin/img/${response[j].img[i]}" data-lightbox="index">
-          <img src="admin/img/${response[j].img[i]}" alt="" srcset="">
+        <a href="admin/img/${stringToImageArray(response[j].img)[i]}" data-lightbox="index">
+          <img src="admin/img/${stringToImageArray(response[j].img)[i]}" alt="" srcset="">
         </a>
 
     `);
     }
   }
   // $("#news_find_new .new_block__text").html(
-  //     JSON.parse(response.text).content
+  //     response.text
   // );
 });
 
@@ -436,7 +476,7 @@ getData("photos", "", "admin").then((response) => {
 
 // Проподаватели --------------------
 
-getData("teachers", "", "admin").then((response) => {
+getData("teachers").then((response) => {
   $("#teachers_main").empty();
 
   response.forEach(function (element, index) {
@@ -447,7 +487,7 @@ getData("teachers", "", "admin").then((response) => {
 
         <div class="teacher">
           <div class="teacher_img">
-              <img src="admin/img/${element.img[0]}" alt="" srcset="">
+              <img src="admin/img/${stringToImageArray(element.img)[0]}" alt="" srcset="">
           </div>
           <div class="teacherName">
               ${element.title}
@@ -456,7 +496,7 @@ getData("teachers", "", "admin").then((response) => {
               ${element.tags}
           </div>
           <div class="teacherDescription">
-              ${JSON.parse(element.text).content}
+              ${element.text}
           </div>
         </div>
        
@@ -466,7 +506,7 @@ getData("teachers", "", "admin").then((response) => {
   });
 });
 
-getData("teachers", "", "admin").then((response) => {
+getData("teachers").then((response) => {
   response.forEach(function (element, index) {
     const classOptions = ["blue", "green", "red", "yellow"];
     const secondClass = classOptions[index % classOptions.length];
@@ -476,7 +516,7 @@ getData("teachers", "", "admin").then((response) => {
 
       $("#this_lesson_teacher").append(`
         <div class="teacher_img">
-          <img src="admin/img/${element.img[0]}" alt="" srcset="">
+          <img src="admin/img/${stringToImageArray(element.img)[0]}" alt="" srcset="">
         </div>
         <div class="teacherName">
           ${element.title}
@@ -485,7 +525,7 @@ getData("teachers", "", "admin").then((response) => {
           ${element.tags}
         </div>
         <div class="teacherDescription">
-          ${JSON.parse(element.text).content}
+          ${element.text}
         </div>
      `);
     }
@@ -494,14 +534,16 @@ getData("teachers", "", "admin").then((response) => {
 
 // ^ Проподаватели ^ ------------------
 
-getData("works", "", "admin").then((response) => {
+getData("works").then((response) => {
   for (let j = 0; j < response.length; j++) {
+    
     if (response[j].tags == $(".thisLesson").attr("lesson_name")) {
-      for (let i = 0; i < response[j].img.length; i++) {
+      for (let i = 0; i < stringToImageArray(response[j].img).length; i++) {
+        
         $("#lesson_works").append(`
         
-          <a href="admin/img/${response[j].img[i]}" data-lightbox="index">
-            <img src="admin/img/${response[j].img[i]}" alt="" srcset="">
+          <a href="admin/img/${stringToImageArray(response[j].img)[i]}" data-lightbox="index">
+            <img src="admin/img/${stringToImageArray(response[j].img)[i]}" alt="" srcset="">
           </a>
 
         `);
@@ -509,11 +551,11 @@ getData("works", "", "admin").then((response) => {
     }
   }
   // $("#news_find_new .new_block__text").html(
-  //     JSON.parse(response.text).content
+  //     response.text
   // );
 });
 
-getData("creativity", "", "admin").then((response) => {
+getData("creativity").then((response) => {
   // $("#creativity").empty();
 
   response.forEach(function (element) {
@@ -522,14 +564,14 @@ getData("creativity", "", "admin").then((response) => {
   <div class="mySlides fade">
     <div class="creativityBlock">
       <div class="creativity_img">
-          <img src="admin/img/${element.img}" alt="">
+          <img src="admin/img/${stringToImageArray(element.img)[0]}" alt="">
       </div>
 
       <div class="creativityText">
         <div class="creativityTitle title32">${element.title}</div>
         <div class="creativityTitle title24"></div>
         <div class="creativityContent">
-          ${JSON.parse(element.text).content}
+          ${element.text}
         </div>
       </div>
     </div>
