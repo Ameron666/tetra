@@ -63,6 +63,12 @@ div {
   color: var(--color-yellow);
 }
 
+.title20 {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
 .title24 {
   font-size: 24px;
   font-weight: 500;
@@ -883,6 +889,11 @@ footer {
   flex-direction: column;
   gap: 20px;
   padding: 30px;
+}
+
+.possibleContent {
+  overflow: hidden;
+  
 }
 
 .kostyl {

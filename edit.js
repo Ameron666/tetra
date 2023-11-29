@@ -112,8 +112,9 @@ const queryParams_new = url_new.searchParams;
 const id_new = queryParams_new.get("id_new");
 if (id_new) {
   getData("news", id_new, "admin").then((response) => {
-    $(".newThisTitle").text(response.title);
-    $(".newContent").html(response.text);
+    console.log(response);
+    $(".newThisTitle").text(response[1]);
+    $(".newContent").html(response[2]);
 
     for (let i = 0; i < stringToImageArray(response[4]).length; i++) {
       $(".newThis_images").append(`
