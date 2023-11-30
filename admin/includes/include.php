@@ -2,7 +2,7 @@
 session_start();
 require 'rb/rb.php';
 
-R::setup( 'mysql:host=localhost; dbname=cmit', 'root', '' );
+R::setup( 'mysql:host=localhost; dbname=jorlamarel_cmit', 'jorlamarel_cmit', 'r%X3LwrA');
 
 if (!R::testConnection()) {
     exit('Нет подключения к БД');

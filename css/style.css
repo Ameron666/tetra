@@ -893,7 +893,20 @@ footer {
 
 .possibleContent {
   overflow: hidden;
-  
+  overflow-y: scroll;
+  height: 230px;
+}
+.possibleContent::-webkit-scrollbar {
+  width: 0;
+}
+
+.possibleContent::-webkit-scrollbar-track {
+  -webkit-box-shadow: 0 0 0 0 rgba(34, 60, 80, 0.2) inset;
+  background-color: var(--color-background);
+}
+
+.possibleContent::-webkit-scrollbar-thumb {
+  background-color: var(--color-red-transparent6);
 }
 
 .kostyl {
